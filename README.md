@@ -1,49 +1,77 @@
-api-grafico
-Este proyecto muestra los precios de criptomonedas utilizando datos obtenidos de una API y los grafica en una página web.
+# Proyecto: Cotización de Criptomonedas con SQLite y Node.js
 
-Estructura del Proyecto
-.vscode/
-    settings.json
-database.sqlite
-index.html
-package.json
-script.js
-style.css
+## Descripción
+Este proyecto permite obtener la cotización de criptomonedas en Binance, almacenarlas en una base de datos **SQLite** y visualizar la información mediante gráficos en una interfaz web.
 
-.vscode/settings.json: Configuración para el servidor en vivo.
-database.sqlite: Base de datos SQLite (actualmente vacía).
-index.html: Página principal que muestra los gráficos.
-package.json: Archivo de configuración de npm con dependencias y scripts.
-script.js: Script principal que obtiene datos de la API, los guarda y los grafica.
-style.css: Estilos para la página web.
-Instalación
-Clona el repositorio:
-git clone <URL_DEL_REPOSITORIO>
-cd api-grafico
+## Tecnologías Utilizadas
+- **Node.js**: Para el backend y la API.
+- **Express.js**: Para manejar las rutas y las solicitudes HTTP.
+- **SQLite**: Para almacenar las cotizaciones de criptomonedas.
+- **Chart.js**: Para graficar los datos en el frontend.
+- **HTML, CSS y JavaScript**: Para la interfaz de usuario.
 
-Instala las dependencias:
+## Instalación
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/tu-usuario/tu-repositorio.git
+cd tu-repositorio
+```
+
+### 2. Instalar dependencias
+Asegúrate de tener **Node.js** instalado. Luego, instala las dependencias con:
+```bash
 npm install
+```
 
-Uso
-Abre index.html en tu navegador o utiliza una extensión de servidor en vivo en tu editor de código (por ejemplo, Live Server en Visual Studio Code).
+### 3. Crear la base de datos SQLite
+Ejecuta el siguiente comando para crear el archivo de base de datos:
+```bash
+touch database.sqlite
+```
 
-El script script.js se ejecutará automáticamente, obteniendo datos de la API y actualizando el gráfico cada hora.
+### 4. Iniciar el servidor
+```bash
+node main.js
+```
+Esto iniciará el servidor en **http://localhost:3000**.
 
-Dependencias
-sqlite3
-Chart.js
-chartjs-plugin-zoom
-chartjs-plugin-datalabels
-chartjs-plugin-annotation
-Autor
-Nombre del Autor (Completa con tu nombre)
-Licencia
-Este proyecto está licenciado bajo la Licencia ISC. Consulta el archivo LICENSE para obtener más detalles.
+## Uso
+### Guardar una cotización
+Puedes enviar datos a la API con el siguiente comando:
+```bash
+curl -X POST http://localhost:3000/cotizaciones \
+     -H "Content-Type: application/json" \
+     -d '{"fecha_hora": "2025-02-20 10:00:00", "moneda": "BTC", "precio_compra": 69000, "precio_venta": 70000}'
+```
 
-Contribuciones
-Las contribuciones son bienvenidas. Por favor, abre un issue o un pull request para discutir cualquier cambio que desees realizar.
+### Obtener cotizaciones
+Para obtener todas las cotizaciones de una moneda:
+```bash
+curl http://localhost:3000/cotizaciones?moneda=BTC
+```
 
-Notas
-Asegúrate de tener una conexión a Internet activa para obtener datos de la API y cargar las bibliotecas externas.
-Los datos se almacenan en localStorage del navegador y se grafican utilizando Chart.js.
-¡Gracias por usar este proyecto!
+### Interfaz web
+1. Abre `index.html` en un navegador.
+2. La aplicación recuperará los datos desde la API y generará gráficos con **Chart.js**.
+
+## Estructura del Proyecto
+```
+.
+├── database.sqlite        # Archivo de la base de datos
+├── index.html             # Interfaz web
+├── main.js                # Código principal del servidor
+├── package.json           # Configuración de Node.js
+├── README.md              # Documentación del proyecto
+```
+
+## Mejoras Futuras
+- Agregar autenticación para proteger la API.
+- Implementar WebSockets para actualizaciones en tiempo real.
+- Soporte para múltiples monedas.
+
+## Contribución
+Si deseas contribuir, **haz un fork del repositorio** y envía un Pull Request con tus mejoras.
+
+## Licencia
+Este proyecto se distribuye bajo la licencia MIT.
+
