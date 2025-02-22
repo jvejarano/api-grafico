@@ -1,3 +1,21 @@
+async function main() {
+    const moneda = "BTC";
+    while (true) {
+        const fechaHora = new Date().toLocaleString();
+        const datos = await obtenerDatosDolarapi(moneda);
+
+        if (datos) { 
+            guardarDatos(fechaHora, moneda, datos.precioCompra, datos.precioVenta);
+            graficarDatos(moneda);
+
+            // Actualizar el precio de venta en el título
+            document.getElementById("precioVenta").innerText = `(Venta: ${datos.precioVenta} USD)`;
+        }
+
+        await new Promise(resolve => setTimeout(resolve, 60 * 60 * 1000)); // Esperar 1 hora
+    }
+}
+
 async function obtenerDatosDolarapi(moneda) {
     const url = `https://bo.dolarapi.com/v1/dolares/binance`;
     const respuesta = await fetch(url);
@@ -74,7 +92,7 @@ function graficarDatos(moneda) {
 }
 
 async function main() {
-    const moneda = "BTC";
+    const moneda = "$Bs";
     while (true) {
         try {
             const fechaHora = new Date().toLocaleString();
