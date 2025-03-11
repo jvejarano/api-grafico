@@ -1,5 +1,71 @@
 async function main() {
     const moneda = "$Bs";
+    document.getElementById("grafico").innerHTML = '<div class="loading">Cargando datos...</div>';
+    
+    try {
+        await actualizarDatos(moneda);
+        setInterval(() => actualizarDatos(moneda), 30 * 60 * 1000);
+    } catch (error) {
+        document.getElementById("grafico").innerHTML = `<div class="error">Error al cargar datos: ${error.message}</div>`;
+        console.error("Error en la inicialización:", error);
+    }
+}
+
+async function actualizarDatos(moneda) {
+    try {
+        const fechaHora = new Date().toISOString();
+        const datos = await obtenerDatosDolarapi(moneda);
+
+        if (datos) {
+            await guardarDatos(fechaHora, moneda, datos.precioCompra, datos.precioVenta);
+            await graficarDatos(moneda);
+            document.getElementById("precioVenta").innerText = `(Venta: ${datos.precioVenta.toFixed(2)} Bs/$US)`;
+            actualizarEstadisticas(moneda);
+        }
+    } catch (error) {
+        console.error("Ocurrió un error:", error);
+    }
+}
+
+async function guardarDatos(fechaHora, moneda, precioCompra, precioVenta) {
+    try {
+        // Guardar en localStorage
+        const clave = `precios_${moneda}`;
+        let datos = JSON.parse(localStorage.getItem(clave)) || [];
+        datos.push({ fechaHora, precioCompra, precioVenta });
+        localStorage.setItem(clave, JSON.stringify(datos));
+
+        // Guardar en la base de datos
+        await fetch('http://localhost:3000/api/cotizacion', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                fechaHora,
+                moneda,
+                precioCompra,
+                precioVenta
+            })
+        });
+    } catch (error) {
+        console.error('Error al guardar datos:', error);
+    }
+}
+
+async function buscarCotizaciones(fechaInicio, fechaFin, moneda) {
+    try {
+        const response = await fetch(`http://localhost:3000/api/cotizaciones?fechaInicio=${fechaInicio}&fechaFin=${fechaFin}&moneda=${moneda}`);
+        return await response.json();
+    } catch (error) {
+        console.error('Error al buscar cotizaciones:', error);
+        return [];
+    }
+}
+
+// ...resto del código existente...
+async function main() {
+    const moneda = "$Bs";
     // Mostrar indicador de carga
     document.getElementById("grafico").innerHTML = '<div class="loading">Cargando datos...</div>';
     

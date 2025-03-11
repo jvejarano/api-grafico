@@ -1,15 +1,14 @@
 {
-  "dependencies": {
-    "sqlite3": "^5.1.7"
-  },
   "name": "api-grafico",
   "version": "1.0.0",
-  "main": "script.js",
+  "description": "API para gráficos de cotizaciones",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "sqlite3": "^5.1.6",
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
 }

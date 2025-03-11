@@ -150,3 +150,36 @@ select {
         padding: 10px;
     }
 }
+/* ...existing code... */
+
+.busqueda-container {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.busqueda-container form {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.busqueda-container input[type="date"] {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.busqueda-container button {
+    padding: 5px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.busqueda-container button:hover {
+    background-color: #0056b3;
+}

@@ -2,29 +2,31 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precio: Venta Bs a $US en Binance</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+    <title>Gráfico de Cotizaciones</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Precio para la venta de pesos bolivianos a dólares en Binance <span id="precioVenta"></span></h1>
-        <p class="descripcion">Monitoreo en tiempo real del tipo de cambio para la venta de Bs a $US</p>
-    </header>
-
-    <main>
-        <div id="grafico" class="grafico-container">
-            <div class="loading">Cargando datos...</div>
+    <div class="container">
+        <h1>Cotización del Dólar <span id="precioVenta"></span></h1>
+        
+        <div class="busqueda-container">
+            <h3>Búsqueda por Fecha</h3>
+            <form id="busquedaForm">
+                <label for="fechaInicio">Fecha Inicio:</label>
+                <input type="date" id="fechaInicio" required>
+                
+                <label for="fechaFin">Fecha Fin:</label>
+                <input type="date" id="fechaFin" required>
+                
+                <button type="submit">Buscar</button>
+            </form>
         </div>
-    </main>
 
-    <footer>
-        <p>Datos obtenidos desde bo.dolarapi.com - Actualización automática cada 30 minutos</p>
-    </footer>
+        <div id="grafico"></div>
+        <div id="estado"></div>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
