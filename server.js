@@ -83,20 +83,31 @@ app.get('/api/cotizaciones', (req, res) => {
         });
     }
 
+    // Formatear fechas para asegurar el formato correcto (YYYY-MM-DD)
+    const fechaInicioFormateada = new Date(fechaInicio).toISOString().split('T')[0];
+    const fechaFinFormateada = new Date(fechaFin).toISOString().split('T')[0];
+
+    console.log('🔍 Buscando cotizaciones:', {
+        moneda,
+        fechaInicio: fechaInicioFormateada,
+        fechaFin: fechaFinFormateada
+    });
+
     const query = `
         SELECT * FROM cotizaciones 
         WHERE moneda = ? 
-        AND fechaHora BETWEEN ? AND ?
+        AND date(fechaHora) >= date(?)
+        AND date(fechaHora) <= date(?)
         ORDER BY fechaHora ASC
     `;
     
-    db.all(query, [moneda, fechaInicio, fechaFin], (err, rows) => {
+    db.all(query, [moneda, fechaInicioFormateada, fechaFinFormateada], (err, rows) => {
         if (err) {
             console.error('❌ Error consultando datos:', err.message);
             return res.status(500).json({ error: err.message });
         }
         
-        console.log(`✅ Se encontraron ${rows.length} registros`);
+        console.log(`✅ Se encontraron ${rows.length} registros para el rango especificado`);
         res.json(rows);
     });
 });
