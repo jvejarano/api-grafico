@@ -46,28 +46,72 @@ const db = new sqlite3.Database(dbPath, (err) => {
 app.post('/api/cotizacion', (req, res) => {
     const { fechaHora, moneda, precioCompra, precioVenta } = req.body;
     
-    // Validación de datos
-    if (!fechaHora || !moneda || !precioCompra || !precioVenta) {
+    console.log('📥 Datos recibidos:', req.body);
+
+    // Validación de datos más detallada
+    if (!fechaHora || !moneda || precioCompra === undefined || precioVenta === undefined) {
+        console.error('❌ Datos incompletos:', { fechaHora, moneda, precioCompra, precioVenta });
         return res.status(400).json({ 
-            error: 'Todos los campos son requeridos' 
+            error: 'Todos los campos son requeridos',
+            datosRecibidos: req.body
         });
     }
+
+    // Asegurar que los precios sean números
+    const compra = Number(precioCompra);
+    const venta = Number(precioVenta);
+
+    if (isNaN(compra) || isNaN(venta)) {
+        console.error('❌ Precios inválidos:', { precioCompra, precioVenta });
+        return res.status(400).json({ 
+            error: 'Los precios deben ser números válidos' 
+        });
+    }
+
+    // Formatear la fecha para asegurar formato correcto
+    const fechaFormateada = new Date(fechaHora).toISOString().slice(0, 19).replace('T', ' ');
 
     const query = `
         INSERT INTO cotizaciones (fechaHora, moneda, precioCompra, precioVenta)
         VALUES (?, ?, ?, ?)
     `;
     
-    db.run(query, [fechaHora, moneda, precioCompra, precioVenta], function(err) {
+    console.log('📝 Intentando guardar:', { 
+        fechaFormateada, 
+        moneda, 
+        compra, 
+        venta 
+    });
+
+    db.run(query, [fechaFormateada, moneda, compra, venta], function(err) {
         if (err) {
             console.error('❌ Error insertando datos:', err.message);
-            return res.status(500).json({ error: err.message });
+            return res.status(500).json({ 
+                error: err.message,
+                detalles: 'Error al guardar en la base de datos'
+            });
         }
         
         console.log(`✅ Nueva cotización guardada con ID: ${this.lastID}`);
+        
+        // Verificar inmediatamente que se guardó
+        db.get('SELECT * FROM cotizaciones WHERE id = ?', [this.lastID], (err, row) => {
+            if (err) {
+                console.error('❌ Error verificando inserción:', err.message);
+            } else {
+                console.log('✅ Datos guardados verificados:', row);
+            }
+        });
+
         res.status(201).json({
             id: this.lastID,
-            mensaje: 'Cotización guardada exitosamente'
+            mensaje: 'Cotización guardada exitosamente',
+            datos: {
+                fechaHora: fechaFormateada,
+                moneda,
+                precioCompra: compra,
+                precioVenta: venta
+            }
         });
     });
 });
