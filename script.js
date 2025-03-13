@@ -357,8 +357,13 @@ function graficarDatos(moneda) {
                 <canvas id="graficoCanvas"></canvas>
             </div>
             <div class="controles">
-                <button id="btnReset">Restablecer zoom</button>
-                <select id="periodoSelect">
+                <button id="btnReset" class="btn btn-reset">
+                    <i class="fas fa-sync-alt"></i> Restablecer zoom
+                </button>
+                <button id="btnCompartir" class="btn btn-share">
+                    <i class="fas fa-share-alt"></i> Compartir
+                </button>
+                <select id="periodoSelect" class="select-period">
                     <option value="todo">Todo</option>
                     <option value="semana" selected>Última semana</option>
                     <option value="mes">Último mes</option>
@@ -433,6 +438,34 @@ function graficarDatos(moneda) {
     // Trigger para mostrar el período seleccionado inicialmente
     document.getElementById("periodoSelect").dispatchEvent(new Event("change"));
     
+    // Agregar manejador para el botón compartir
+    document.getElementById("btnCompartir").addEventListener("click", async () => {
+        const ultimoDato = datosValidos[datosValidos.length - 1];
+        const mensaje = `Cotización del dólar: ${ultimoDato.precioVenta.toFixed(2)} Bs/$US\nFecha: ${new Date(ultimoDato.fechaHora).toLocaleString()}\n\nVisita nuestra aplicación: ${window.location.href}`;
+
+        try {
+            if (navigator.share) {
+                await navigator.share({
+                    title: 'Cotización del dólar',
+                    text: mensaje,
+                    url: window.location.href
+                });
+            } else {
+                await navigator.clipboard.writeText(mensaje);
+                const estadoEl = document.getElementById("estado");
+                estadoEl.textContent = "¡Enlace copiado al portapapeles!";
+                estadoEl.className = "estado success";
+                setTimeout(() => {
+                    estadoEl.textContent = `Última actualización: ${new Date().toLocaleString()}`;
+                    estadoEl.className = "estado";
+                }, 3000);
+            }
+        } catch (error) {
+            console.error("Error al compartir:", error);
+            alert("No se pudo compartir la cotización");
+        }
+    });
+
     // Actualizar estadísticas
     actualizarEstadisticas(moneda, datosValidos);
 }
