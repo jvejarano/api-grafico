@@ -353,32 +353,22 @@ function graficarDatos(moneda) {
     // Crear contenedor para el gráfico y estadísticas
     document.getElementById("grafico").innerHTML = `
         <div class="grafico-contenedor">
-            <div class="grafico-header">
-                <h2 class="grafico-titulo">Cotización del Dólar</h2>
-                <div class="grafico-subtitulo" id="precioVenta"></div>
-            </div>
             <div class="grafico-canvas-container">
                 <canvas id="graficoCanvas"></canvas>
             </div>
-            <div class="controles-grupo">
-                <div class="controles-principales">
-                    <select id="periodoSelect" class="select-period">
-                        <option value="todo">Todo</option>
-                        <option value="semana" selected>Última semana</option>
-                        <option value="mes">Último mes</option>
-                        <option value="dia">Último día</option>
-                    </select>
-                </div>
-                <div class="controles-secundarios">
-                    <button id="btnReset" class="btn btn-reset" aria-label="Restablecer zoom">
-                        <i class="fas fa-sync-alt"></i>
-                        <span class="btn-texto">Restablecer</span>
-                    </button>
-                    <button id="btnCompartir" class="btn btn-share" aria-label="Compartir">
-                        <i class="fas fa-share-alt"></i>
-                        <span class="btn-texto">Compartir</span>
-                    </button>
-                </div>
+            <div class="controles">
+                <button id="btnReset" class="btn btn-reset">
+                    <i class="fas fa-sync-alt"></i> Restablecer zoom
+                </button>
+                <button id="btnCompartir" class="btn btn-share">
+                    <i class="fas fa-share-alt"></i> Compartir
+                </button>
+                <select id="periodoSelect" class="select-period">
+                    <option value="todo">Todo</option>
+                    <option value="semana" selected>Última semana</option>
+                    <option value="mes">Último mes</option>
+                    <option value="dia">Último día</option>
+                </select>
             </div>
             <div id="estadisticas" class="estadisticas"></div>
             <div id="estado" class="estado">Última actualización: ${new Date().toLocaleString()}</div>
