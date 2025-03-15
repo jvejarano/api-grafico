@@ -3,11 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Gráfico de Cotizaciones</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script src="themeToggle.js"></script>
 </head>
 <body>
     <div class="container">
+        <div class="cotizaciones">
+            <div class="cotizacion-card">
+                <h2>Dólar Binance</h2>
+                <div class="precios">
+                    <p>Compra: <span id="precioCompraBinance">-</span></p>
+                    <p>Venta: <span id="precioVentaBinance">-</span></p>
+                </div>
+            </div>
+            <div class="cotizacion-card">
+                <h2>Dólar Oficial</h2>
+                <div class="precios">
+                    <p>Compra: <span id="precioCompraOficial">-</span></p>
+                    <p>Venta: <span id="precioVentaOficial">-</span></p>
+                </div>
+            </div>
+        </div>
+        
         <h1>Cotización del Dólar <span id="precioVenta"></span></h1>
         
         <div class="busqueda-container">
@@ -32,4 +52,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
+<button class="theme-toggle" onclick="toggleTheme()">
+    <i class="fas fa-sun"></i>
+    <i class="fas fa-moon"></i>
+</button>
 </html>

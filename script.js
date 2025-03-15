@@ -547,4 +547,36 @@ function actualizarEstadisticas(moneda, datos) {
     }
 }
 
+async function obtenerCotizaciones() {
+    try {
+        const [resBinance, resOficial] = await Promise.all([
+            fetch('https://bo.dolarapi.com/v1/dolares/binance'),
+            fetch('https://bo.dolarapi.com/v1/dolares/oficial')
+        ]);
+
+        const dataBinance = await resBinance.json();
+        const dataOficial = await resOficial.json();
+
+        // Actualizar Binance
+        document.getElementById('precioCompraBinance').textContent = 
+            dataBinance.compra ? `$${dataBinance.compra}` : 'No disponible';
+        document.getElementById('precioVentaBinance').textContent = 
+            dataBinance.venta ? `$${dataBinance.venta}` : 'No disponible';
+
+        // Actualizar Oficial
+        document.getElementById('precioCompraOficial').textContent = 
+            dataOficial.compra ? `$${dataOficial.compra}` : 'No disponible';
+        document.getElementById('precioVentaOficial').textContent = 
+            dataOficial.venta ? `$${dataOficial.venta}` : 'No disponible';
+
+    } catch (error) {
+        console.error('Error al obtener cotizaciones:', error);
+        document.getElementById('estado').textContent = 'Error al obtener las cotizaciones';
+    }
+}
+
+// Actualizar cotizaciones cada 1 minuto
+obtenerCotizaciones();
+setInterval(obtenerCotizaciones, 60000);
+
 main();
