@@ -2,58 +2,69 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Gráfico de Cotizaciones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cotizaciones del dólar en tiempo real. Consulta el precio del dólar Binance y dólar oficial con actualizaciones en vivo.">
+    <meta name="keywords" content="dólar, cotización, binance, dólar oficial, argentina, tipo de cambio">
+    <meta name="author" content="Tu Nombre">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="URL_DE_TU_SITIO">
+    <meta property="og:title" content="Gráfico de Cotizaciones del Dólar">
+    <meta property="og:description" content="Cotizaciones del dólar en tiempo real. Consulta el precio del dólar Binance y dólar oficial.">
+    <meta property="og:image" content="URL_DE_TU_IMAGEN">
+
+    <title>Cotizaciones del Dólar en Tiempo Real | Dólar Binance y Oficial</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<script src="themeToggle.js"></script>
+    <script src="themeToggle.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="cotizaciones">
-            <div class="cotizacion-card">
-                <h2>Dólar Binance</h2>
-                <div class="precios">
-                    <p>Compra: <span id="precioCompraBinance">-</span></p>
-                    <p>Venta: <span id="precioVentaBinance">-</span></p>
-                </div>
+    <header>
+        <nav aria-label="Navegación principal">
+            <div class="container">
             </div>
-            <div class="cotizacion-card">
-                <h2>Dólar Oficial</h2>
-                <div class="precios">
-                    <p>Compra: <span id="precioCompraOficial">-</span></p>
-                    <p>Venta: <span id="precioVentaOficial">-</span></p>
-                </div>
-            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="container">
+            <section class="cotizaciones" aria-label="Cotizaciones actuales">
+                <article class="cotizacion-card">
+                    <h2>Dólar Binance</h2>
+                    <div class="precios">
+                        <p>Compra: <span id="precioCompraBinance">-</span></p>
+                        <p>Venta: <span id="precioVentaBinance">-</span></p>
+                    </div>
+                </article>
+                <article class="cotizacion-card">
+                    <h2>Dólar Oficial</h2>
+                    <div class="precios">
+                        <p>Compra: <span id="precioCompraOficial">-</span></p>
+                        <p>Venta: <span id="precioVentaOficial">-</span></p>
+                    </div>
+                </article>
+            </section>
+            
+            <section class="grafico-section" aria-label="Gráfico de cotizaciones">
+                <h1>Cotización del Dólar <span id="precioVenta"></span></h1>
+                <div id="grafico"></div>
+                <div id="estado" aria-live="polite"></div>
+            </section>
         </div>
-        
-        <h1>Cotización del Dólar <span id="precioVenta"></span></h1>
-        
-        <div class="busqueda-container">
-           <!--  <h3>Búsqueda por Fecha</h3>
-            <form id="busquedaForm">
-                <label for="fechaInicio">Fecha Inicio:</label>
-                <input type="date" id="fechaInicio" required>
-                
-                <label for="fechaFin">Fecha Fin:</label>
-                <input type="date" id="fechaFin" required>
-                
-                <button type="submit">
-                    <i class="fas fa-search"></i> Buscar
-                </button>
-            </form> -->
-        </div>
+    </main>
 
-        <div id="grafico"></div>
-        <div id="estado"></div>
-    </div>
-
+    <footer>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
+            <i class="fas fa-sun" aria-hidden="true"></i>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+    </footer>
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
-<button class="theme-toggle" onclick="toggleTheme()">
-    <i class="fas fa-sun"></i>
-    <i class="fas fa-moon"></i>
-</button>
 </html>
