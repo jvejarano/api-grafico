@@ -50,7 +50,16 @@
             </section>
             
             <section class="grafico-section" aria-label="Gráfico de cotizaciones">
-                <h1>Cotización del Dólar <span id="precioVenta"></span></h1>
+                <h1 class="main-title">
+                    <span class="title-label">Cotización del Dólar</span>
+                    <span id="precioVenta" class="current-price"></span>
+                </h1>
+                <div class="period-selector">
+                    <button class="period-btn active" data-period="1d">Último día</button>
+                    <button class="period-btn" data-period="1w">Última semana</button>
+                    <button class="period-btn" data-period="1m">Último mes</button>
+                    <button class="period-btn" data-period="all">Todo</button>
+                </div>
                 <div id="grafico"></div>
                 <div id="estado" aria-live="polite"></div>
             </section>

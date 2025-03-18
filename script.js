@@ -357,18 +357,9 @@ function graficarDatos(moneda) {
                 <canvas id="graficoCanvas"></canvas>
             </div>
             <div class="controles">
-                <button id="btnReset" class="btn btn-reset">
-                    <i class="fas fa-sync-alt"></i> Restablecer zoom
-                </button>
                 <button id="btnCompartir" class="btn btn-share">
                     <i class="fas fa-share-alt"></i> Compartir
                 </button>
-                <select id="periodoSelect" class="select-period">
-                    <option value="todo">Todo</option>
-                    <option value="semana" selected>Última semana</option>
-                    <option value="mes">Último mes</option>
-                    <option value="dia">Último día</option>
-                </select>
             </div>
             <div id="estadisticas" class="estadisticas"></div>
             <div id="estado" class="estado">Última actualización: ${new Date().toLocaleString()}</div>
@@ -378,65 +369,68 @@ function graficarDatos(moneda) {
     const canvas = document.getElementById("graficoCanvas");
     let grafico = crearGrafico(canvas, datosValidos, fechas, preciosVenta, `Precio Bs/$US`);
     
-    // Añadir funcionalidad a los controles
-    document.getElementById("btnReset").addEventListener("click", () => {
-        grafico.resetZoom();
-    });
+    // Eliminar el event listener del btnReset ya que el botón ya no existe
     
-    document.getElementById("periodoSelect").addEventListener("change", (e) => {
-        const periodo = e.target.value;
-        let datosFiltered = [...datosValidos];
-        let fechasFiltered = [...fechas];
-        let preciosVentaFiltered = [...preciosVenta];
-        
-        if (periodo !== "todo") {
-            const ahora = new Date();
-            let fechaLimite;
+    document.querySelectorAll('.period-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            // Remover clase active de todos los botones
+            document.querySelectorAll('.period-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
             
-            switch(periodo) {
-                case "dia":
-                    fechaLimite = new Date(ahora);
-                    fechaLimite.setDate(ahora.getDate() - 1);
-                    break;
-                case "semana":
-                    fechaLimite = new Date(ahora);
-                    fechaLimite.setDate(ahora.getDate() - 7);
-                    break;
-                case "mes":
-                    fechaLimite = new Date(ahora);
-                    fechaLimite.setMonth(ahora.getMonth() - 1);
-                    break;
-            }
+            // Agregar clase active al botón seleccionado
+            button.classList.add('active');
             
-            // Filtrar los datos según el período seleccionado
-            const indicesFiltrados = datosValidos.map((item, index) => {
-                try {
-                    return {
-                        index,
-                        fecha: new Date(item.fechaHora)
-                    };
-                } catch(e) {
-                    return null;
+            const period = button.getAttribute('data-period');
+            let datosFiltered = [...datosValidos];
+            let fechasFiltered = [...fechas];
+            let preciosVentaFiltered = [...preciosVenta];
+            
+            if (period !== 'all') {
+                const ahora = new Date();
+                let fechaLimite;
+                
+                switch(period) {
+                    case '1d':
+                        fechaLimite = new Date(ahora);
+                        fechaLimite.setDate(ahora.getDate() - 1);
+                        break;
+                    case '1w':
+                        fechaLimite = new Date(ahora);
+                        fechaLimite.setDate(ahora.getDate() - 7);
+                        break;
+                    case '1m':
+                        fechaLimite = new Date(ahora);
+                        fechaLimite.setMonth(ahora.getMonth() - 1);
+                        break;
                 }
-            }).filter(item => item !== null && item.fecha >= fechaLimite)
-              .map(item => item.index);
-            
-            datosFiltered = indicesFiltrados.map(i => datosValidos[i]);
-            fechasFiltered = indicesFiltrados.map(i => fechas[i]);
-            preciosVentaFiltered = indicesFiltrados.map(i => preciosVenta[i]);
+                
+                // Filtrar los datos según el período seleccionado
+                const indicesFiltrados = datosValidos.map((item, index) => {
+                    try {
+                        return {
+                            index,
+                            fecha: new Date(item.fechaHora)
+                        };
+                    } catch(e) {
+                        return null;
+                    }
+                }).filter(item => item !== null && item.fecha >= fechaLimite)
+                  .map(item => item.index);
+                
+                datosFiltered = indicesFiltrados.map(i => datosValidos[i]);
+                fechasFiltered = indicesFiltrados.map(i => fechas[i]);
+                preciosVentaFiltered = indicesFiltrados.map(i => preciosVenta[i]);
+            }
             
             // Destruir el gráfico anterior y crear uno nuevo con los datos filtrados
             grafico.destroy();
             grafico = crearGrafico(canvas, datosFiltered, fechasFiltered, preciosVentaFiltered, `Precio Bs/$US`);
-        } else {
-            // Mostrar todos los datos
-            grafico.destroy();
-            grafico = crearGrafico(canvas, datosValidos, fechas, preciosVenta, `Precio Bs/$US`);
-        }
+        });
     });
     
-    // Trigger para mostrar el período seleccionado inicialmente
-    document.getElementById("periodoSelect").dispatchEvent(new Event("change"));
+    // Activar el botón de última semana por defecto
+    document.querySelector('.period-btn[data-period="1w"]').click();
     
     // Agregar manejador para el botón compartir
     document.getElementById("btnCompartir").addEventListener("click", async () => {
@@ -570,3 +564,107 @@ obtenerCotizaciones();
 setInterval(obtenerCotizaciones, 60000);
 
 main();
+
+// Manejador de botones de período
+document.querySelectorAll('.period-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        // Remover clase active de todos los botones
+        document.querySelectorAll('.period-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Agregar clase active al botón seleccionado
+        button.classList.add('active');
+        
+        // Obtener el período seleccionado
+        const period = button.getAttribute('data-period');
+        
+        // Actualizar el gráfico según el período
+        updateChartByPeriod(period);
+    });
+});
+
+// Función para actualizar el gráfico según el período
+function updateChartByPeriod(period) {
+    const now = new Date();
+    let startDate;
+    
+    switch(period) {
+        case '1d':
+            startDate = new Date(now.setDate(now.getDate() - 1));
+            break;
+        case '1w':
+            startDate = new Date(now.setDate(now.getDate() - 7));
+            break;
+        case '1m':
+            startDate = new Date(now.setMonth(now.getMonth() - 1));
+            break;
+        case 'all':
+            startDate = null; // Mostrar todos los datos disponibles
+            break;
+    }
+    
+    // Filtrar datos según el período seleccionado
+    let filteredData;
+    if (startDate) {
+        filteredData = datos.filter(item => new Date(item.fecha) >= startDate);
+    } else {
+        filteredData = datos; // Usar todos los datos si se selecciona 'all'
+    }
+    
+    // Actualizar el gráfico con los datos filtrados
+    actualizarGrafico(filteredData);
+}
+
+// Modificar la función actualizarGrafico para usar los datos filtrados
+function actualizarGrafico(datosAMostrar) {
+    const fechas = datosAMostrar.map(item => item.fecha);
+    const precios = datosAMostrar.map(item => item.precio);
+    
+    if (myChart) {
+        myChart.destroy();
+    }
+    
+    const ctx = document.getElementById('grafico').getContext('2d');
+    myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: fechas,
+            datasets: [{
+                label: 'Precio del Dólar',
+                data: precios,
+                borderColor: getComputedStyle(document.documentElement).getPropertyValue('--accent-color'),
+                backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--accent-color') + '40',
+                tension: 0.1,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        color: getComputedStyle(document.documentElement).getPropertyValue('--text-color') + '20'
+                    },
+                    ticks: {
+                        color: getComputedStyle(document.documentElement).getPropertyValue('--text-color')
+                    }
+                },
+                y: {
+                    grid: {
+                        color: getComputedStyle(document.documentElement).getPropertyValue('--text-color') + '20'
+                    },
+                    ticks: {
+                        color: getComputedStyle(document.documentElement).getPropertyValue('--text-color')
+                    }
+                }
+            }
+        }
+    });
+}
