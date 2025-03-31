@@ -1,0 +1,123 @@
+[33mcommit c04c32d869c778be7e0f8576ec2b5e83f90e36e3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Mon Mar 31 15:44:01 2025 -0400
+
+    Commit de control de version, pre validación de cotizaciones.
+
+[33mcommit e56d3ff475c7def4c82aed819ef07b344d6135fe[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Tue Mar 18 11:55:49 2025 -0400
+
+    Add period selection buttons and update chart functionality; enhance title styling and layout
+
+[33mcommit 332e87e552db4d6db28d31972a848586f4af1db9[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Mon Mar 17 18:31:48 2025 -0400
+
+    Refactor index.html for improved structure and accessibility; update meta tags and enhance layout
+
+[33mcommit 9eb31c915a57265fb5acdaebb155796fe306db04[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Mon Mar 17 09:53:41 2025 -0400
+
+    Remove commented-out search section in index.html
+
+[33mcommit cb7a4c8ca1f6d20dfd34010feeb956ea02f59b6e[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Mon Mar 17 09:47:59 2025 -0400
+
+    Add initial files for chai, typescript, randombytes, and ts-node; configure package settings
+
+[33mcommit c6ac97d75f830dab2d639c0f95e71a9c9e91a647[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Sat Mar 15 15:16:36 2025 -0400
+
+    Revert "Enhance chart layout and styling; add responsive controls and improve accessibility features"
+    
+    This reverts commit 9e9503938b2abc1f50c6f0ed0bfac307b6b91d9c.
+
+[33mcommit 6b3146ac05bed6d6ca7d680c82281806838313c4[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Sat Mar 15 15:07:33 2025 -0400
+
+    Add theme toggle functionality and update cotizaciones display; enhance styling and layout
+
+[33mcommit 9e9503938b2abc1f50c6f0ed0bfac307b6b91d9c[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Thu Mar 13 20:54:25 2025 -0400
+
+    Enhance chart layout and styling; add responsive controls and improve accessibility features
+
+[33mcommit 7d208ab1f97a4231e0be90fc4e65a515c407bdb6[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Thu Mar 13 14:48:40 2025 -0400
+
+    Add Font Awesome icons and enhance button styles; implement share functionality for currency data
+
+[33mcommit 06d3c5184c0b4ac0d0f35a8d385c7f0dce292bb2[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Wed Mar 12 10:52:42 2025 -0400
+
+    Enhance API data validation and logging for cotizaciones; add test script for database insertion
+
+[33mcommit c071c9313faeb466a3c65c2b2900e6b89dd6e754[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Tue Mar 11 09:43:43 2025 -0400
+
+    Format date inputs for API query and enhance logging for cotizaciones retrieval
+
+[33mcommit 5884a70e41a46bb08b0fc2b498e884873ae026d5[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Tue Mar 11 09:15:00 2025 -0400
+
+    Add TypeScript definitions and configuration files for various modules. "Commit para comitear".
+
+[33mcommit 0cf11ae8e1009498d2c47a7cb673647729c48bf7[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Mon Mar 3 10:47:11 2025 -0400
+
+    Enhance index.html and style.css for improved layout and styling; add responsive design and loading indicators
+
+[33mcommit 60e207679027d817a5dc5a0c2d4a22d72af423ff[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Sat Feb 22 11:13:50 2025 -0400
+
+    Update index.html and script.js for currency $Bs price display and data fetching
+
+[33mcommit e4e656e1b968b66b7663e8360aeba071f6ecf1c7[m
+Author: Jorge Vejarano Moreno <jorgevejarano@gmail.com>
+Date:   Fri Feb 21 09:33:35 2025 -0400
+
+    Update README.md
+
+[33mcommit 7ac7b9d33d7b36db275cb02723fc0e08eb0a5eff[m
+Author: Jorge Vejarano Moreno <jorgevejarano@gmail.com>
+Date:   Fri Feb 21 09:30:02 2025 -0400
+
+    Create README.md
+    
+    add a readme
+
+[33mcommit f35d20ccd3293fc91c8e457e60fbf40902b9ff9f[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Fri Feb 21 09:22:37 2025 -0400
+
+    Implement API data fetching and local storage for dollar prices; add charting functionality
+
+[33mcommit 2ecb698384e765051f7da2fba84c63514959a86c[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Fri Feb 21 09:22:11 2025 -0400
+
+    Add SQLite database setup and update package metadata
+
+[33mcommit fe74f6864f543843d9bd819d77831016e062c020[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Thu Feb 20 15:41:51 2025 -0400
+
+    implementamos la base de datos sqllite3
+
+[33mcommit f26b03c46534ad27be8f269fb4c89450be9b0583[m[33m ([m[1;31morigin/api-monitor-db[m[33m, [m[1;32mapi-monitor-db[m[33m)[m
+Author: Jorge Vejarano <jorgevejarano@gmail.comm>
+Date:   Thu Feb 20 15:28:32 2025 -0400
+
+    grafico de cotizacion del dolar Binance
