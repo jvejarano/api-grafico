@@ -63,43 +63,6 @@ async function buscarCotizaciones(fechaInicio, fechaFin, moneda) {
     }
 }
 
-// ...resto del código existente...
-async function main() {
-    const moneda = "$Bs";
-    // Mostrar indicador de carga
-    document.getElementById("grafico").innerHTML = '<div class="loading">Cargando datos...</div>';
-    
-    try {
-        await actualizarDatos(moneda);
-        // Configurar actualización periódica
-        setInterval(() => actualizarDatos(moneda), 30 * 60 * 1000); // Actualizar cada 30 minutos
-    } catch (error) {
-        document.getElementById("grafico").innerHTML = `<div class="error">Error al cargar datos: ${error.message}</div>`;
-        console.error("Error en la inicialización:", error);
-    }
-}
-
-async function actualizarDatos(moneda) {
-    try {
-        // Usar formato ISO para garantizar compatibilidad entre navegadores
-        const fechaHora = new Date().toISOString();
-        const datos = await obtenerDatosDolarapi(moneda);
-
-        if (datos) {
-            guardarDatos(fechaHora, moneda, datos.precioCompra, datos.precioVenta);
-            graficarDatos(moneda);
-
-            // Actualizar el precio de venta en el título
-            document.getElementById("precioVenta").innerText = `(Venta: ${datos.precioVenta.toFixed(2)} Bs/$US)`;
-            
-            // Mostrar información adicional
-            actualizarEstadisticas(moneda);
-        }
-    } catch (error) {
-        console.error("Ocurrió un error:", error);
-    }
-}
-
 async function obtenerDatosDolarapi(moneda) {
     try {
         const url = `https://bo.dolarapi.com/v1/dolares/binance`;
@@ -156,14 +119,18 @@ function crearGrafico(canvas, datos, etiquetas, preciosVenta, etiqueta) {
     
     // Calcular colores basados en el cambio
     const colores = preciosVenta.map((valor, i) => {
-        if (i === 0) return 'rgba(75, 192, 192, 0.7)';
-        return preciosVenta[i] > preciosVenta[i-1] ? 'rgba(75, 192, 192, 0.7)' : 'rgba(255, 99, 132, 0.7)';
+        if (i === 0) return 'rgba(76, 175, 80, 0.2)'; // Verde suave
+        return preciosVenta[i] > preciosVenta[i-1] ? 
+               'rgba(76, 175, 80, 0.2)' : // Verde para subida
+               'rgba(244, 67, 54, 0.2)';   // Rojo para bajada
     });
 
     // Calcular bordes
     const bordes = preciosVenta.map((valor, i) => {
-        if (i === 0) return 'rgba(75, 192, 192, 1)';
-        return preciosVenta[i] > preciosVenta[i-1] ? 'rgba(75, 192, 192, 1)' : 'rgba(255, 99, 132, 1)';
+        if (i === 0) return '#4CAF50'; // Verde
+        return preciosVenta[i] > preciosVenta[i-1] ? 
+               '#4CAF50' : // Verde para subida
+               '#f44336';  // Rojo para bajada
     });
 
     return new Chart(canvas, {
@@ -177,13 +144,17 @@ function crearGrafico(canvas, datos, etiquetas, preciosVenta, etiqueta) {
                 backgroundColor: colores,
                 borderWidth: 2,
                 tension: 0.4,
-                pointRadius: 3,
+                pointRadius: 4,
                 pointHoverRadius: 6,
+                pointBackgroundColor: (context) => {
+                    const index = context.dataIndex;
+                    if (index === 0) return '#4CAF50';
+                    return preciosVenta[index] > preciosVenta[index-1] ? '#4CAF50' : '#f44336';
+                },
                 segment: {
                     borderColor: ctx => {
-                        const index = ctx.p0.parsed.x;
-                        return index > 0 && preciosVenta[index] < preciosVenta[index-1] ? 
-                               'rgba(255, 99, 132, 1)' : 'rgba(75, 192, 192, 1)';
+                        if (!ctx.p0.parsed) return '#4CAF50';
+                        return ctx.p0.parsed.y > ctx.p1.parsed.y ? '#f44336' : '#4CAF50';
                     }
                 }
             }]
@@ -231,18 +202,26 @@ function crearGrafico(canvas, datos, etiquetas, preciosVenta, etiqueta) {
                 tooltip: {
                     callbacks: {
                         label: function(context) {
-                            return `${etiqueta}: ${context.parsed.y.toFixed(4)} Bs/$US`;
+                            const index = context.dataIndex;
+                            const currentValue = context.parsed.y;
+                            const prevValue = index > 0 ? context.dataset.data[index - 1] : currentValue;
+                            const change = currentValue - prevValue;
+                            const changePercent = ((change / prevValue) * 100).toFixed(2);
+                            
+                            return [
+                                `${etiqueta}: ${currentValue.toFixed(4)} Bs/$US`,
+                                `Cambio: ${change >= 0 ? '+' : ''}${change.toFixed(4)} (${changePercent}%)`
+                            ];
                         },
-                        title: function(tooltipItems) {
-                            // Obtener el índice del punto seleccionado
-                            const index = tooltipItems[0].dataIndex;
-                            // Mostrar la fecha formateada
-                            try {
-                                const fecha = new Date(datos[index].fechaHora);
-                                return fecha.toLocaleString();
-                            } catch(e) {
-                                return etiquetas[index];
-                            }
+                        labelColor: function(context) {
+                            const index = context.dataIndex;
+                            const currentValue = context.parsed.y;
+                            const prevValue = index > 0 ? context.dataset.data[index - 1] : currentValue;
+                            
+                            return {
+                                borderColor: currentValue >= prevValue ? '#4CAF50' : '#f44336',
+                                backgroundColor: currentValue >= prevValue ? 'rgba(76, 175, 80, 0.2)' : 'rgba(244, 67, 54, 0.2)'
+                            };
                         }
                     }
                 },
@@ -313,8 +292,169 @@ function crearGrafico(canvas, datos, etiquetas, preciosVenta, etiqueta) {
 }
 
 function graficarDatos(moneda) {
-    const datos = JSON.parse(localStorage.getItem(`precios_${moneda}`)) || [];
+    // Obtener datos del localStorage
+    let datosLocalStorage = JSON.parse(localStorage.getItem(`precios_${moneda}`)) || [];
     
+    // Cargar datos del archivo JSON
+    fetch('data-bs-binance.xml')
+        .then(response => response.text())
+        .then(jsonText => {
+            let datosArchivo = [];
+            try {
+                datosArchivo = JSON.parse(jsonText);
+            } catch (e) {
+                console.error('Error al parsear archivo:', e);
+            }
+            
+            // Usar un Map para eliminar duplicados basados en fechaHora
+            const mapaRegistros = new Map();
+            
+            // Primero agregar los datos del archivo (datos históricos)
+            datosArchivo.forEach(dato => {
+                if (dato.fechaHora && dato.precioCompra && dato.precioVenta) {
+                    mapaRegistros.set(dato.fechaHora, dato);
+                }
+            });
+            
+            // Luego agregar los datos del localStorage (más recientes)
+            // Si hay duplicados, los del localStorage tienen prioridad
+            datosLocalStorage.forEach(dato => {
+                if (dato.fechaHora && dato.precioCompra && dato.precioVenta) {
+                    mapaRegistros.set(dato.fechaHora, dato);
+                }
+            });
+            
+            // Convertir el Map a array y ordenar por fecha
+            window.datosValidos = Array.from(mapaRegistros.values()).sort((a, b) => 
+                new Date(a.fechaHora) - new Date(b.fechaHora)
+            );
+            
+            if (window.datosValidos.length === 0) {
+                document.getElementById("grafico").innerHTML = "<p>No hay datos válidos para mostrar.</p>";
+                return;
+            }
+            
+            // Crear contenedor para el gráfico y estadísticas
+            document.getElementById("grafico").innerHTML = `
+                <div class="grafico-contenedor">
+                    <div class="grafico-canvas-container">
+                        <canvas id="graficoCanvas"></canvas>
+                    </div>
+                    <div class="controles">
+                        <button id="btnCompartir" class="btn btn-share">
+                            <i class="fas fa-share-alt"></i> Compartir
+                        </button>
+                    </div>
+                    <div id="estadisticas" class="estadisticas"></div>
+                    <div id="estado" class="estado">
+                        Última actualización: ${new Date().toLocaleString()}<br>
+                        Total registros únicos: ${window.datosValidos.length}
+                    </div>
+                </div>
+            `;
+
+            // Configurar manejadores de eventos para los botones de período
+            document.querySelectorAll('.period-btn').forEach(button => {
+                button.removeEventListener('click', periodoClickHandler);
+                button.addEventListener('click', periodoClickHandler);
+            });
+
+            // Activar el botón de última semana por defecto
+            document.querySelector('.period-btn[data-period="1w"]').click();
+            
+            // Configurar botón compartir
+            configurarBotonCompartir(window.datosValidos);
+        })
+        .catch(error => {
+            console.error('Error al cargar datos:', error);
+            graficarDatosLocales(datosLocalStorage, moneda);
+        });
+}
+
+function periodoClickHandler(event) {
+    document.querySelectorAll('.period-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    const period = event.target.getAttribute('data-period');
+    filtrarYMostrarDatos(period);
+}
+
+function filtrarYMostrarDatos(periodo) {
+    if (!window.datosValidos) return;
+    
+    const ahora = new Date();
+    let fechaLimite;
+    
+    switch(periodo) {
+        case '1d':
+            fechaLimite = new Date(ahora.getTime() - (24 * 60 * 60 * 1000));
+            break;
+        case '1w':
+            fechaLimite = new Date(ahora.getTime() - (7 * 24 * 60 * 60 * 1000));
+            break;
+        case '1m':
+            fechaLimite = new Date(ahora.getTime() - (30 * 24 * 60 * 60 * 1000));
+            break;
+        case 'all':
+            fechaLimite = new Date(0);
+            break;
+    }
+    
+    // Filtrar datos según el período seleccionado
+    const datosFiltrados = window.datosValidos.filter(item => {
+        const fechaItem = new Date(item.fechaHora);
+        return fechaItem >= fechaLimite;
+    });
+    
+    // Formatear fechas para la visualización
+    const fechas = datosFiltrados.map(dato => {
+        const fecha = new Date(dato.fechaHora);
+        return fecha.toLocaleDateString() + ' ' + fecha.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    });
+    
+    const preciosVenta = datosFiltrados.map(dato => dato.precioVenta);
+    
+    // Actualizar gráfico y estadísticas
+    const canvas = document.getElementById("graficoCanvas");
+    if (canvas) {
+        if (window.graficoActual) {
+            window.graficoActual.destroy();
+        }
+        window.graficoActual = crearGrafico(canvas, datosFiltrados, fechas, preciosVenta, `Precio Bs/$US`);
+        actualizarEstadisticas('$Bs', datosFiltrados);
+    }
+}
+
+function configurarBotonCompartir(datosValidos) {
+    document.getElementById("btnCompartir").addEventListener("click", async () => {
+        const ultimoDato = datosValidos[datosValidos.length - 1];
+        const mensaje = `Cotización del dólar: ${ultimoDato.precioVenta.toFixed(2)} Bs/$US\nFecha: ${new Date(ultimoDato.fechaHora).toLocaleString()}\n\nVisita nuestra aplicación: ${window.location.href}`;
+
+        try {
+            if (navigator.share) {
+                await navigator.share({
+                    title: 'Cotización del dólar',
+                    text: mensaje,
+                    url: window.location.href
+                });
+            } else {
+                await navigator.clipboard.writeText(mensaje);
+                const estadoEl = document.getElementById("estado");
+                estadoEl.textContent = "¡Enlace copiado al portapapeles!";
+                estadoEl.className = "estado success";
+                setTimeout(() => {
+                    estadoEl.textContent = `Última actualización: ${new Date().toLocaleString()}`;
+                    estadoEl.className = "estado";
+                }, 3000);
+            }
+        } catch (error) {
+            console.error("Error al compartir:", error);
+            alert("No se pudo compartir la cotización");
+        }
+    });
+}
+
+// Función auxiliar para graficar solo con datos locales en caso de error
+function graficarDatosLocales(datos, moneda) {
     if (datos.length === 0) {
         document.getElementById("grafico").innerHTML = "<p>No hay datos para mostrar.</p>";
         return;
@@ -369,66 +509,6 @@ function graficarDatos(moneda) {
     const canvas = document.getElementById("graficoCanvas");
     let grafico = crearGrafico(canvas, datosValidos, fechas, preciosVenta, `Precio Bs/$US`);
     
-    // Eliminar el event listener del btnReset ya que el botón ya no existe
-    
-    document.querySelectorAll('.period-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            // Remover clase active de todos los botones
-            document.querySelectorAll('.period-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Agregar clase active al botón seleccionado
-            button.classList.add('active');
-            
-            const period = button.getAttribute('data-period');
-            let datosFiltered = [...datosValidos];
-            let fechasFiltered = [...fechas];
-            let preciosVentaFiltered = [...preciosVenta];
-            
-            if (period !== 'all') {
-                const ahora = new Date();
-                let fechaLimite;
-                
-                switch(period) {
-                    case '1d':
-                        fechaLimite = new Date(ahora);
-                        fechaLimite.setDate(ahora.getDate() - 1);
-                        break;
-                    case '1w':
-                        fechaLimite = new Date(ahora);
-                        fechaLimite.setDate(ahora.getDate() - 7);
-                        break;
-                    case '1m':
-                        fechaLimite = new Date(ahora);
-                        fechaLimite.setMonth(ahora.getMonth() - 1);
-                        break;
-                }
-                
-                // Filtrar los datos según el período seleccionado
-                const indicesFiltrados = datosValidos.map((item, index) => {
-                    try {
-                        return {
-                            index,
-                            fecha: new Date(item.fechaHora)
-                        };
-                    } catch(e) {
-                        return null;
-                    }
-                }).filter(item => item !== null && item.fecha >= fechaLimite)
-                  .map(item => item.index);
-                
-                datosFiltered = indicesFiltrados.map(i => datosValidos[i]);
-                fechasFiltered = indicesFiltrados.map(i => fechas[i]);
-                preciosVentaFiltered = indicesFiltrados.map(i => preciosVenta[i]);
-            }
-            
-            // Destruir el gráfico anterior y crear uno nuevo con los datos filtrados
-            grafico.destroy();
-            grafico = crearGrafico(canvas, datosFiltered, fechasFiltered, preciosVentaFiltered, `Precio Bs/$US`);
-        });
-    });
-    
     // Activar el botón de última semana por defecto
     document.querySelector('.period-btn[data-period="1w"]').click();
     
@@ -481,10 +561,15 @@ function actualizarEstadisticas(moneda, datos) {
     if (datos.length < 2) return;
     
     const preciosVenta = datos.map(dato => dato.precioVenta);
+    const preciosCompra = datos.map(dato => dato.precioCompra);
     const precioActual = preciosVenta[preciosVenta.length - 1];
     const precioAnterior = preciosVenta[preciosVenta.length - 2];
     const cambio = precioActual - precioAnterior;
     const cambioPorcentaje = (cambio / precioAnterior) * 100;
+    
+    // Calcular spread actual
+    const spreadActual = preciosVenta[preciosVenta.length - 1] - preciosCompra[preciosCompra.length - 1];
+    const spreadPorcentaje = (spreadActual / preciosCompra[preciosCompra.length - 1]) * 100;
     
     const max = Math.max(...preciosVenta);
     const min = Math.min(...preciosVenta);
@@ -505,6 +590,10 @@ function actualizarEstadisticas(moneda, datos) {
             <div class="stat-item">
                 <span class="stat-label">Cambio:</span>
                 <span class="stat-value ${cambio >= 0 ? 'positivo' : 'negativo'}">${cambio.toFixed(4)} Bs/$US (${cambioPorcentaje.toFixed(2)}%)</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Spread (Venta-Compra):</span>
+                <span class="stat-value">${spreadActual.toFixed(4)} Bs/$US (${spreadPorcentaje.toFixed(2)}%)</span>
             </div>
             <div class="stat-item">
                 <span class="stat-label">Máximo:</span>
@@ -667,4 +756,33 @@ function actualizarGrafico(datosAMostrar) {
             }
         }
     });
+}
+
+function guardarDatos(fechaHora, moneda, precioCompra, precioVenta) {
+    const clave = `precios_${moneda}`;
+    let datos = JSON.parse(localStorage.getItem(clave)) || [];
+    
+    // Filtrar datos antiguos (último mes)
+    const unMesAtras = new Date();
+    unMesAtras.setMonth(unMesAtras.getMonth() - 1);
+    
+    // Filtrar datos usando Date válidas y eliminar duplicados
+    datos = datos.filter(item => {
+        try {
+            const fecha = new Date(item.fechaHora);
+            return !isNaN(fecha.getTime()) && fecha >= unMesAtras;
+        } catch (e) {
+            return false;
+        }
+    });
+
+    // Verificar si el último precio es diferente antes de agregar
+    const ultimoDato = datos[datos.length - 1];
+    if (!ultimoDato || 
+        Math.abs(ultimoDato.precioVenta - precioVenta) >= 0.01 || 
+        Math.abs(ultimoDato.precioCompra - precioCompra) >= 0.01) {
+        
+        datos.push({ fechaHora, precioCompra, precioVenta });
+        localStorage.setItem(clave, JSON.stringify(datos));
+    }
 }

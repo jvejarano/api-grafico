@@ -1,0 +1,2307 @@
+[
+    {
+        "fechaHora": "2025-03-13T00:23:30.678Z",
+        "precioCompra": 11.820599999999999,
+        "precioVenta": 11.94
+    },
+    {
+        "fechaHora": "2025-03-13T00:30:41.608Z",
+        "precioCompra": 11.820599999999999,
+        "precioVenta": 11.94
+    },
+    {
+        "fechaHora": "2025-03-13T01:00:41.706Z",
+        "precioCompra": 11.820599999999999,
+        "precioVenta": 11.94
+    },
+    {
+        "fechaHora": "2025-03-13T01:30:41.702Z",
+        "precioCompra": 11.820599999999999,
+        "precioVenta": 11.94
+    },
+    {
+        "fechaHora": "2025-03-13T02:00:42.185Z",
+        "precioCompra": 11.820599999999999,
+        "precioVenta": 11.94
+    },
+    {
+        "fechaHora": "2025-03-13T02:30:42.189Z",
+        "precioCompra": 11.820599999999999,
+        "precioVenta": 11.94
+    },
+    {
+        "fechaHora": "2025-03-13T03:01:18.194Z",
+        "precioCompra": 11.820599999999999,
+        "precioVenta": 11.94
+    },
+    {
+        "fechaHora": "2025-03-13T03:07:51.125Z",
+        "precioCompra": 11.820599999999999,
+        "precioVenta": 11.94
+    },
+    {
+        "fechaHora": "2025-03-13T13:01:09.748Z",
+        "precioCompra": 11.9691,
+        "precioVenta": 12.09
+    },
+    {
+        "fechaHora": "2025-03-13T13:02:25.753Z",
+        "precioCompra": 11.9691,
+        "precioVenta": 12.09
+    },
+    {
+        "fechaHora": "2025-03-13T13:32:27.195Z",
+        "precioCompra": 11.9691,
+        "precioVenta": 12.09
+    },
+    {
+        "fechaHora": "2025-03-13T14:02:27.195Z",
+        "precioCompra": 11.9592,
+        "precioVenta": 12.08
+    },
+    {
+        "fechaHora": "2025-03-13T14:32:27.194Z",
+        "precioCompra": 11.9592,
+        "precioVenta": 12.08
+    },
+    {
+        "fechaHora": "2025-03-13T15:02:27.371Z",
+        "precioCompra": 11.9592,
+        "precioVenta": 12.08
+    },
+    {
+        "fechaHora": "2025-03-13T15:32:27.363Z",
+        "precioCompra": 12.2463,
+        "precioVenta": 12.37
+    },
+    {
+        "fechaHora": "2025-03-13T16:02:27.369Z",
+        "precioCompra": 12.2463,
+        "precioVenta": 12.37
+    },
+    {
+        "fechaHora": "2025-03-13T16:27:39.997Z",
+        "precioCompra": 12.2463,
+        "precioVenta": 12.37
+    },
+    {
+        "fechaHora": "2025-03-13T16:57:40.119Z",
+        "precioCompra": 12.1968,
+        "precioVenta": 12.32
+    },
+    {
+        "fechaHora": "2025-03-13T17:27:40.118Z",
+        "precioCompra": 12.1968,
+        "precioVenta": 12.32
+    },
+    {
+        "fechaHora": "2025-03-13T17:57:40.133Z",
+        "precioCompra": 12.1968,
+        "precioVenta": 12.32
+    },
+    {
+        "fechaHora": "2025-03-13T18:18:36.263Z",
+        "precioCompra": 12.3453,
+        "precioVenta": 12.47
+    },
+    {
+        "fechaHora": "2025-03-13T18:54:50.788Z",
+        "precioCompra": 12.3453,
+        "precioVenta": 12.47
+    },
+    {
+        "fechaHora": "2025-03-13T19:24:51.731Z",
+        "precioCompra": 12.3552,
+        "precioVenta": 12.48
+    },
+    {
+        "fechaHora": "2025-03-13T19:54:51.735Z",
+        "precioCompra": 12.3552,
+        "precioVenta": 12.48
+    },
+    {
+        "fechaHora": "2025-03-13T20:24:51.736Z",
+        "precioCompra": 12.3552,
+        "precioVenta": 12.48
+    },
+    {
+        "fechaHora": "2025-03-13T20:54:51.737Z",
+        "precioCompra": 12.3651,
+        "precioVenta": 12.49
+    },
+    {
+        "fechaHora": "2025-03-13T21:25:01.731Z",
+        "precioCompra": 12.3651,
+        "precioVenta": 12.49
+    },
+    {
+        "fechaHora": "2025-03-13T21:55:01.726Z",
+        "precioCompra": 12.375,
+        "precioVenta": 12.5
+    },
+    {
+        "fechaHora": "2025-03-13T22:14:25.293Z",
+        "precioCompra": 12.375,
+        "precioVenta": 12.5
+    },
+    {
+        "fechaHora": "2025-03-13T22:44:25.735Z",
+        "precioCompra": 12.375,
+        "precioVenta": 12.5
+    },
+    {
+        "fechaHora": "2025-03-13T23:14:25.735Z",
+        "precioCompra": 12.375,
+        "precioVenta": 12.5
+    },
+    {
+        "fechaHora": "2025-03-13T23:44:25.373Z",
+        "precioCompra": 12.375,
+        "precioVenta": 12.5
+    },
+    {
+        "fechaHora": "2025-03-14T00:14:25.368Z",
+        "precioCompra": 12.375,
+        "precioVenta": 12.5
+    },
+    {
+        "fechaHora": "2025-03-14T00:21:02.041Z",
+        "precioCompra": 12.375,
+        "precioVenta": 12.5
+    },
+    {
+        "fechaHora": "2025-03-14T00:51:02.734Z",
+        "precioCompra": 12.375,
+        "precioVenta": 12.5
+    },
+    {
+        "fechaHora": "2025-03-14T00:56:02.192Z",
+        "precioCompra": 12.375,
+        "precioVenta": 12.5
+    },
+    {
+        "fechaHora": "2025-03-14T14:03:10.758Z",
+        "precioCompra": 12.028500000000001,
+        "precioVenta": 12.15
+    },
+    {
+        "fechaHora": "2025-03-14T14:33:11.198Z",
+        "precioCompra": 12.028500000000001,
+        "precioVenta": 12.15
+    },
+    {
+        "fechaHora": "2025-03-14T15:03:10.571Z",
+        "precioCompra": 12.028500000000001,
+        "precioVenta": 12.15
+    },
+    {
+        "fechaHora": "2025-03-14T15:33:10.570Z",
+        "precioCompra": 12.028500000000001,
+        "precioVenta": 12.15
+    },
+    {
+        "fechaHora": "2025-03-14T16:03:10.572Z",
+        "precioCompra": 12.028500000000001,
+        "precioVenta": 12.15
+    },
+    {
+        "fechaHora": "2025-03-14T18:28:04.059Z",
+        "precioCompra": 11.8404,
+        "precioVenta": 11.96
+    },
+    {
+        "fechaHora": "2025-03-14T19:14:48.491Z",
+        "precioCompra": 11.8404,
+        "precioVenta": 11.96
+    },
+    {
+        "fechaHora": "2025-03-14T19:28:04.560Z",
+        "precioCompra": 11.830499999999999,
+        "precioVenta": 11.95
+    },
+    {
+        "fechaHora": "2025-03-14T19:58:04.555Z",
+        "precioCompra": 11.830499999999999,
+        "precioVenta": 11.95
+    },
+    {
+        "fechaHora": "2025-03-14T20:33:13.693Z",
+        "precioCompra": 11.682,
+        "precioVenta": 11.8
+    },
+    {
+        "fechaHora": "2025-03-14T21:23:07.179Z",
+        "precioCompra": 11.682,
+        "precioVenta": 11.8
+    },
+    {
+        "fechaHora": "2025-03-14T21:28:22.552Z",
+        "precioCompra": 11.682,
+        "precioVenta": 11.8
+    },
+    {
+        "fechaHora": "2025-03-14T21:58:22.551Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-14T22:28:22.554Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-14T22:58:22.546Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-14T23:28:22.540Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-14T23:30:48.779Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-14T23:44:58.368Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-15T00:14:58.541Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-15T00:44:58.542Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-15T01:14:58.546Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-15T01:44:58.546Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-15T02:15:22.546Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-15T02:45:22.540Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-15T03:15:22.547Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-15T04:28:47.009Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-15T04:35:26.028Z",
+        "precioCompra": 11.672099999999999,
+        "precioVenta": 11.79
+    },
+    {
+        "fechaHora": "2025-03-15T14:00:15.154Z",
+        "precioCompra": 11.662199999999999,
+        "precioVenta": 11.78
+    },
+    {
+        "fechaHora": "2025-03-15T14:51:43.989Z",
+        "precioCompra": 11.662199999999999,
+        "precioVenta": 11.78
+    },
+    {
+        "fechaHora": "2025-03-15T15:15:27.103Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T15:30:17.182Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T16:00:16.258Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T16:30:54.266Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T17:00:16.259Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T17:30:54.258Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T18:00:54.263Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T18:11:13.359Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T18:41:14.255Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:08:05.580Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:08:08.959Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:09:48.175Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:09:56.742Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:10:04.027Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:00.280Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:03.317Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:04.225Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:05.230Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:06.503Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:07.807Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:12.180Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:12.455Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:12.626Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:12.840Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:13.018Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:40.954Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:41.592Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:42.018Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:42.275Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:42.514Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:42.675Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:52.681Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:52.871Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:17:53.059Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:22:17.963Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:22:21.315Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:32:59.156Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:32:59.744Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:33:01.161Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T19:55:24.319Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T20:27:55.615Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T20:58:00.196Z",
+        "precioCompra": 11.5929,
+        "precioVenta": 11.71
+    },
+    {
+        "fechaHora": "2025-03-15T21:28:00.194Z",
+        "precioCompra": 11.6028,
+        "precioVenta": 11.72
+    },
+    {
+        "fechaHora": "2025-03-15T22:03:17.764Z",
+        "precioCompra": 11.6028,
+        "precioVenta": 11.72
+    },
+    {
+        "fechaHora": "2025-03-16T03:10:08.364Z",
+        "precioCompra": 11.6028,
+        "precioVenta": 11.72
+    },
+    {
+        "fechaHora": "2025-03-16T03:38:12.392Z",
+        "precioCompra": 11.6028,
+        "precioVenta": 11.72
+    },
+    {
+        "fechaHora": "2025-03-16T03:58:14.490Z",
+        "precioCompra": 11.6028,
+        "precioVenta": 11.72
+    },
+    {
+        "fechaHora": "2025-03-16T04:28:15.191Z",
+        "precioCompra": 11.6028,
+        "precioVenta": 11.72
+    },
+    {
+        "fechaHora": "2025-03-16T04:58:15.192Z",
+        "precioCompra": 11.6028,
+        "precioVenta": 11.72
+    },
+    {
+        "fechaHora": "2025-03-17T12:34:30.094Z",
+        "precioCompra": 11.7711,
+        "precioVenta": 11.89
+    },
+    {
+        "fechaHora": "2025-03-17T13:04:31.922Z",
+        "precioCompra": 11.7711,
+        "precioVenta": 11.89
+    },
+    {
+        "fechaHora": "2025-03-17T13:23:25.790Z",
+        "precioCompra": 11.7711,
+        "precioVenta": 11.89
+    },
+    {
+        "fechaHora": "2025-03-17T13:45:59.219Z",
+        "precioCompra": 11.7216,
+        "precioVenta": 11.84
+    },
+    {
+        "fechaHora": "2025-03-17T13:51:08.267Z",
+        "precioCompra": 11.7216,
+        "precioVenta": 11.84
+    },
+    {
+        "fechaHora": "2025-03-17T13:55:44.544Z",
+        "precioCompra": 11.7216,
+        "precioVenta": 11.84
+    },
+    {
+        "fechaHora": "2025-03-17T14:21:55.140Z",
+        "precioCompra": 11.7216,
+        "precioVenta": 11.84
+    },
+    {
+        "fechaHora": "2025-03-17T14:51:55.925Z",
+        "precioCompra": 11.6919,
+        "precioVenta": 11.81
+    },
+    {
+        "fechaHora": "2025-03-17T15:21:55.288Z",
+        "precioCompra": 11.6919,
+        "precioVenta": 11.81
+    },
+    {
+        "fechaHora": "2025-03-17T15:47:26.069Z",
+        "precioCompra": 11.6523,
+        "precioVenta": 11.77
+    },
+    {
+        "fechaHora": "2025-03-17T16:12:17.444Z",
+        "precioCompra": 11.6523,
+        "precioVenta": 11.77
+    },
+    {
+        "fechaHora": "2025-03-17T21:20:00.098Z",
+        "precioCompra": 11.6523,
+        "precioVenta": 11.77
+    },
+    {
+        "fechaHora": "2025-03-17T21:50:01.195Z",
+        "precioCompra": 11.6523,
+        "precioVenta": 11.77
+    },
+    {
+        "fechaHora": "2025-03-17T22:20:01.194Z",
+        "precioCompra": 11.731499999999999,
+        "precioVenta": 11.85
+    },
+    {
+        "fechaHora": "2025-03-17T22:38:55.348Z",
+        "precioCompra": 11.731499999999999,
+        "precioVenta": 11.85
+    },
+    {
+        "fechaHora": "2025-03-17T22:41:22.382Z",
+        "precioCompra": 11.731499999999999,
+        "precioVenta": 11.85
+    },
+    {
+        "fechaHora": "2025-03-17T23:11:22.504Z",
+        "precioCompra": 11.731499999999999,
+        "precioVenta": 11.85
+    },
+    {
+        "fechaHora": "2025-03-17T23:41:23.191Z",
+        "precioCompra": 11.731499999999999,
+        "precioVenta": 11.85
+    },
+    {
+        "fechaHora": "2025-03-18T00:11:23.197Z",
+        "precioCompra": 11.731499999999999,
+        "precioVenta": 11.85
+    },
+    {
+        "fechaHora": "2025-03-18T12:52:38.093Z",
+        "precioCompra": 11.6919,
+        "precioVenta": 11.81
+    },
+    {
+        "fechaHora": "2025-03-18T13:16:16.680Z",
+        "precioCompra": 11.6919,
+        "precioVenta": 11.81
+    },
+    {
+        "fechaHora": "2025-03-18T13:46:17.984Z",
+        "precioCompra": 11.6919,
+        "precioVenta": 11.81
+    },
+    {
+        "fechaHora": "2025-03-18T14:16:17.976Z",
+        "precioCompra": 11.6919,
+        "precioVenta": 11.81
+    },
+    {
+        "fechaHora": "2025-03-18T14:24:43.681Z",
+        "precioCompra": 11.6919,
+        "precioVenta": 11.81
+    },
+    {
+        "fechaHora": "2025-03-18T14:59:10.570Z",
+        "precioCompra": 11.7117,
+        "precioVenta": 11.83
+    },
+    {
+        "fechaHora": "2025-03-18T15:29:13.971Z",
+        "precioCompra": 11.7117,
+        "precioVenta": 11.83
+    },
+    {
+        "fechaHora": "2025-03-18T15:57:33.791Z",
+        "precioCompra": 11.7117,
+        "precioVenta": 11.83
+    },
+    {
+        "fechaHora": "2025-03-18T16:12:24.495Z",
+        "precioCompra": 11.7216,
+        "precioVenta": 11.84
+    },
+    {
+        "fechaHora": "2025-03-18T16:27:33.948Z",
+        "precioCompra": 11.7216,
+        "precioVenta": 11.84
+    },
+    {
+        "fechaHora": "2025-03-18T16:57:33.946Z",
+        "precioCompra": 11.7216,
+        "precioVenta": 11.84
+    },
+    {
+        "fechaHora": "2025-03-18T17:23:10.201Z",
+        "precioCompra": 11.7216,
+        "precioVenta": 11.84
+    },
+    {
+        "fechaHora": "2025-03-18T17:53:10.294Z",
+        "precioCompra": 11.7216,
+        "precioVenta": 11.84
+    },
+    {
+        "fechaHora": "2025-03-18T18:23:10.983Z",
+        "precioCompra": 11.731499999999999,
+        "precioVenta": 11.85
+    },
+    {
+        "fechaHora": "2025-03-18T18:53:10.981Z",
+        "precioCompra": 11.731499999999999,
+        "precioVenta": 11.85
+    },
+    {
+        "fechaHora": "2025-03-18T18:55:16.043Z",
+        "precioCompra": 11.731499999999999,
+        "precioVenta": 11.85
+    },
+    {
+        "fechaHora": "2025-03-18T19:25:16.152Z",
+        "precioCompra": 11.731499999999999,
+        "precioVenta": 11.85
+    },
+    {
+        "fechaHora": "2025-03-18T19:55:16.985Z",
+        "precioCompra": 11.731499999999999,
+        "precioVenta": 11.85
+    },
+    {
+        "fechaHora": "2025-03-18T20:25:16.157Z",
+        "precioCompra": 11.741399999999999,
+        "precioVenta": 11.86
+    },
+    {
+        "fechaHora": "2025-03-18T20:55:16.984Z",
+        "precioCompra": 11.741399999999999,
+        "precioVenta": 11.86
+    },
+    {
+        "fechaHora": "2025-03-18T22:42:30.809Z",
+        "precioCompra": 11.751299999999999,
+        "precioVenta": 11.87
+    },
+    {
+        "fechaHora": "2025-03-18T23:12:31.692Z",
+        "precioCompra": 11.751299999999999,
+        "precioVenta": 11.87
+    },
+    {
+        "fechaHora": "2025-03-18T23:34:38.326Z",
+        "precioCompra": 11.751299999999999,
+        "precioVenta": 11.87
+    },
+    {
+        "fechaHora": "2025-03-19T00:04:39.201Z",
+        "precioCompra": 11.751299999999999,
+        "precioVenta": 11.87
+    },
+    {
+        "fechaHora": "2025-03-19T00:34:39.203Z",
+        "precioCompra": 11.751299999999999,
+        "precioVenta": 11.87
+    },
+    {
+        "fechaHora": "2025-03-19T01:04:39.193Z",
+        "precioCompra": 11.751299999999999,
+        "precioVenta": 11.87
+    },
+    {
+        "fechaHora": "2025-03-19T01:34:39.190Z",
+        "precioCompra": 11.751299999999999,
+        "precioVenta": 11.87
+    },
+    {
+        "fechaHora": "2025-03-19T02:05:12.197Z",
+        "precioCompra": 11.751299999999999,
+        "precioVenta": 11.87
+    },
+    {
+        "fechaHora": "2025-03-19T02:35:12.200Z",
+        "precioCompra": 11.751299999999999,
+        "precioVenta": 11.87
+    },
+    {
+        "fechaHora": "2025-03-19T03:05:12.206Z",
+        "precioCompra": 11.751299999999999,
+        "precioVenta": 11.87
+    },
+    {
+        "fechaHora": "2025-03-19T03:35:12.203Z",
+        "precioCompra": 11.751299999999999,
+        "precioVenta": 11.87
+    },
+    {
+        "fechaHora": "2025-03-21T02:29:38.902Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-21T02:59:42.536Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-21T15:35:20.836Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-21T16:05:22.204Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-21T16:35:22.191Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-21T17:05:22.191Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-21T17:28:15.545Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-21T17:58:15.699Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-21T18:28:15.706Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-21T18:58:15.706Z",
+        "precioCompra": 11.899799999999999,
+        "precioVenta": 12.02
+    },
+    {
+        "fechaHora": "2025-03-21T19:28:15.702Z",
+        "precioCompra": 11.899799999999999,
+        "precioVenta": 12.02
+    },
+    {
+        "fechaHora": "2025-03-21T19:58:15.700Z",
+        "precioCompra": 11.899799999999999,
+        "precioVenta": 12.02
+    },
+    {
+        "fechaHora": "2025-03-21T20:28:15.699Z",
+        "precioCompra": 11.899799999999999,
+        "precioVenta": 12.02
+    },
+    {
+        "fechaHora": "2025-03-21T20:58:15.700Z",
+        "precioCompra": 11.899799999999999,
+        "precioVenta": 12.02
+    },
+    {
+        "fechaHora": "2025-03-21T21:28:15.704Z",
+        "precioCompra": 11.899799999999999,
+        "precioVenta": 12.02
+    },
+    {
+        "fechaHora": "2025-03-21T21:58:15.705Z",
+        "precioCompra": 11.909699999999999,
+        "precioVenta": 12.03
+    },
+    {
+        "fechaHora": "2025-03-21T22:28:15.704Z",
+        "precioCompra": 11.909699999999999,
+        "precioVenta": 12.03
+    },
+    {
+        "fechaHora": "2025-03-21T22:58:15.705Z",
+        "precioCompra": 11.909699999999999,
+        "precioVenta": 12.03
+    },
+    {
+        "fechaHora": "2025-03-21T23:29:11.195Z",
+        "precioCompra": 11.909699999999999,
+        "precioVenta": 12.03
+    },
+    {
+        "fechaHora": "2025-03-21T23:59:11.203Z",
+        "precioCompra": 11.909699999999999,
+        "precioVenta": 12.03
+    },
+    {
+        "fechaHora": "2025-03-22T00:28:15.707Z",
+        "precioCompra": 11.909699999999999,
+        "precioVenta": 12.03
+    },
+    {
+        "fechaHora": "2025-03-22T00:58:15.703Z",
+        "precioCompra": 11.909699999999999,
+        "precioVenta": 12.03
+    },
+    {
+        "fechaHora": "2025-03-22T01:28:15.696Z",
+        "precioCompra": 11.909699999999999,
+        "precioVenta": 12.03
+    },
+    {
+        "fechaHora": "2025-03-22T01:58:15.697Z",
+        "precioCompra": 11.909699999999999,
+        "precioVenta": 12.03
+    },
+    {
+        "fechaHora": "2025-03-22T02:28:15.700Z",
+        "precioCompra": 11.909699999999999,
+        "precioVenta": 12.03
+    },
+    {
+        "fechaHora": "2025-03-22T02:58:15.335Z",
+        "precioCompra": 11.909699999999999,
+        "precioVenta": 12.03
+    },
+    {
+        "fechaHora": "2025-03-22T03:28:15.330Z",
+        "precioCompra": 11.909699999999999,
+        "precioVenta": 12.03
+    },
+    {
+        "fechaHora": "2025-03-22T14:54:33.467Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-22T15:24:35.200Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-22T15:54:35.200Z",
+        "precioCompra": 11.899799999999999,
+        "precioVenta": 12.02
+    },
+    {
+        "fechaHora": "2025-03-22T16:24:35.202Z",
+        "precioCompra": 11.899799999999999,
+        "precioVenta": 12.02
+    },
+    {
+        "fechaHora": "2025-03-22T16:54:35.193Z",
+        "precioCompra": 11.899799999999999,
+        "precioVenta": 12.02
+    },
+    {
+        "fechaHora": "2025-03-22T17:25:29.196Z",
+        "precioCompra": 11.899799999999999,
+        "precioVenta": 12.02
+    },
+    {
+        "fechaHora": "2025-03-22T17:55:29.193Z",
+        "precioCompra": 11.899799999999999,
+        "precioVenta": 12.02
+    },
+    {
+        "fechaHora": "2025-03-22T18:25:29.194Z",
+        "precioCompra": 11.899799999999999,
+        "precioVenta": 12.02
+    },
+    {
+        "fechaHora": "2025-03-22T18:55:29.200Z",
+        "precioCompra": 11.899799999999999,
+        "precioVenta": 12.02
+    },
+    {
+        "fechaHora": "2025-03-22T19:24:34.509Z",
+        "precioCompra": 11.889899999999999,
+        "precioVenta": 12.01
+    },
+    {
+        "fechaHora": "2025-03-22T19:54:34.517Z",
+        "precioCompra": 11.889899999999999,
+        "precioVenta": 12.01
+    },
+    {
+        "fechaHora": "2025-03-22T20:24:34.506Z",
+        "precioCompra": 11.889899999999999,
+        "precioVenta": 12.01
+    },
+    {
+        "fechaHora": "2025-03-22T20:54:34.516Z",
+        "precioCompra": 11.889899999999999,
+        "precioVenta": 12.01
+    },
+    {
+        "fechaHora": "2025-03-22T21:24:34.517Z",
+        "precioCompra": 11.889899999999999,
+        "precioVenta": 12.01
+    },
+    {
+        "fechaHora": "2025-03-22T21:54:34.511Z",
+        "precioCompra": 11.889899999999999,
+        "precioVenta": 12.01
+    },
+    {
+        "fechaHora": "2025-03-22T22:24:34.511Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-22T22:54:34.515Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-22T23:24:34.512Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-22T23:54:34.512Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-23T00:24:34.508Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-23T00:54:34.514Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-23T01:24:34.513Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-23T01:54:34.516Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-23T02:24:34.513Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-23T02:54:34.766Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-23T03:24:34.769Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-23T03:54:34.778Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-23T04:24:34.768Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-23T04:54:34.773Z",
+        "precioCompra": 11.879999999999999,
+        "precioVenta": 12
+    },
+    {
+        "fechaHora": "2025-03-23T22:55:18.092Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-23T23:25:18.956Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-23T23:55:18.959Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T00:25:18.963Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T00:55:18.961Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T01:25:18.959Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T01:34:18.767Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T13:41:12.544Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-24T14:11:15.787Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-24T14:41:15.784Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T15:11:15.779Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T15:41:15.783Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T16:11:14.924Z",
+        "precioCompra": 11.939400000000001,
+        "precioVenta": 12.06
+    },
+    {
+        "fechaHora": "2025-03-24T16:41:14.920Z",
+        "precioCompra": 11.939400000000001,
+        "precioVenta": 12.06
+    },
+    {
+        "fechaHora": "2025-03-24T17:11:14.926Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-24T17:41:14.934Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-24T18:11:14.922Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-24T18:41:14.928Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-24T19:11:30.787Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T19:41:14.927Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T20:11:14.917Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T20:41:14.919Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T21:11:14.917Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T21:41:14.921Z",
+        "precioCompra": 11.919599999999999,
+        "precioVenta": 12.04
+    },
+    {
+        "fechaHora": "2025-03-24T22:11:14.926Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-24T22:41:14.921Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-24T23:11:14.914Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-24T23:41:14.929Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-25T00:11:14.918Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-25T00:41:14.922Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-25T01:11:14.923Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-25T01:41:14.926Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-25T02:11:14.920Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-25T02:41:14.925Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-25T03:11:14.926Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-25T03:41:14.917Z",
+        "precioCompra": 11.9295,
+        "precioVenta": 12.05
+    },
+    {
+        "fechaHora": "2025-03-25T13:13:30.040Z",
+        "precioCompra": 11.9691,
+        "precioVenta": 12.09
+    },
+    {
+        "fechaHora": "2025-03-25T14:41:10.834Z",
+        "precioCompra": 11.979,
+        "precioVenta": 12.1
+    },
+    {
+        "fechaHora": "2025-03-25T22:59:32.702Z",
+        "precioCompra": 12.087900000000001,
+        "precioVenta": 12.21
+    },
+    {
+        "fechaHora": "2025-03-25T23:29:34.546Z",
+        "precioCompra": 12.087900000000001,
+        "precioVenta": 12.21
+    },
+    {
+        "fechaHora": "2025-03-25T23:59:34.538Z",
+        "precioCompra": 12.087900000000001,
+        "precioVenta": 12.21
+    },
+    {
+        "fechaHora": "2025-03-26T00:29:34.538Z",
+        "precioCompra": 12.087900000000001,
+        "precioVenta": 12.21
+    },
+    {
+        "fechaHora": "2025-03-26T01:00:30.559Z",
+        "precioCompra": 12.087900000000001,
+        "precioVenta": 12.21
+    },
+    {
+        "fechaHora": "2025-03-26T01:30:31.536Z",
+        "precioCompra": 12.087900000000001,
+        "precioVenta": 12.21
+    },
+    {
+        "fechaHora": "2025-03-26T02:00:31.535Z",
+        "precioCompra": 12.087900000000001,
+        "precioVenta": 12.21
+    },
+    {
+        "fechaHora": "2025-03-26T02:30:31.548Z",
+        "precioCompra": 12.087900000000001,
+        "precioVenta": 12.21
+    },
+    {
+        "fechaHora": "2025-03-26T03:00:31.539Z",
+        "precioCompra": 12.087900000000001,
+        "precioVenta": 12.21
+    },
+    {
+        "fechaHora": "2025-03-26T03:31:05.549Z",
+        "precioCompra": 12.087900000000001,
+        "precioVenta": 12.21
+    },
+    {
+        "fechaHora": "2025-03-26T04:01:05.548Z",
+        "precioCompra": 12.087900000000001,
+        "precioVenta": 12.21
+    },
+    {
+        "fechaHora": "2025-03-26T04:31:05.546Z",
+        "precioCompra": 12.087900000000001,
+        "precioVenta": 12.21
+    },
+    {
+        "fechaHora": "2025-03-26T14:18:13.275Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-26T14:48:14.951Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-26T15:18:14.942Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-26T15:48:14.954Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-26T16:18:14.953Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-26T16:48:19.945Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-26T17:18:19.952Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-26T17:48:19.947Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-26T18:11:40.601Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-26T18:41:40.948Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-26T19:11:40.948Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-26T20:03:05.989Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-26T22:58:03.475Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-27T14:47:49.932Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-27T15:17:53.505Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-27T15:47:53.511Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-27T16:17:53.511Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-27T16:47:53.519Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-27T17:18:19.518Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-27T17:48:19.514Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-27T18:41:02.530Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-27T18:41:32.583Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-27T19:07:17.192Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-27T20:15:19.672Z",
+        "precioCompra": 12.097800000000001,
+        "precioVenta": 12.22
+    },
+    {
+        "fechaHora": "2025-03-28T13:13:07.563Z",
+        "precioCompra": 12.2859,
+        "precioVenta": 12.41
+    },
+    {
+        "fechaHora": "2025-03-28T13:43:10.190Z",
+        "precioCompra": 12.2859,
+        "precioVenta": 12.41
+    },
+    {
+        "fechaHora": "2025-03-28T14:26:10.702Z",
+        "precioCompra": 12.2859,
+        "precioVenta": 12.41
+    },
+    {
+        "fechaHora": "2025-03-28T15:33:45.912Z",
+        "precioCompra": 12.2859,
+        "precioVenta": 12.41
+    },
+    {
+        "fechaHora": "2025-03-28T18:23:26.564Z",
+        "precioCompra": 12.256200000000002,
+        "precioVenta": 12.38
+    },
+    {
+        "fechaHora": "2025-03-28T18:46:23.877Z",
+        "precioCompra": 12.256200000000002,
+        "precioVenta": 12.38
+    },
+    {
+        "fechaHora": "2025-03-29T14:23:17.671Z",
+        "precioCompra": 12.2661,
+        "precioVenta": 12.39
+    },
+    {
+        "fechaHora": "2025-03-29T14:53:18.047Z",
+        "precioCompra": 12.2661,
+        "precioVenta": 12.39
+    },
+    {
+        "fechaHora": "2025-03-29T15:23:18.046Z",
+        "precioCompra": 12.276,
+        "precioVenta": 12.4
+    },
+    {
+        "fechaHora": "2025-03-29T15:53:18.054Z",
+        "precioCompra": 12.276,
+        "precioVenta": 12.4
+    },
+    {
+        "fechaHora": "2025-03-29T16:23:18.042Z",
+        "precioCompra": 12.276,
+        "precioVenta": 12.4
+    },
+    {
+        "fechaHora": "2025-03-29T16:53:18.044Z",
+        "precioCompra": 12.276,
+        "precioVenta": 12.4
+    },
+    {
+        "fechaHora": "2025-03-29T17:23:31.938Z",
+        "precioCompra": 12.276,
+        "precioVenta": 12.4
+    },
+    {
+        "fechaHora": "2025-03-29T17:53:31.939Z",
+        "precioCompra": 12.276,
+        "precioVenta": 12.4
+    },
+    {
+        "fechaHora": "2025-03-29T18:23:31.939Z",
+        "precioCompra": 12.276,
+        "precioVenta": 12.4
+    },
+    {
+        "fechaHora": "2025-03-29T18:53:31.947Z",
+        "precioCompra": 12.2661,
+        "precioVenta": 12.39
+    },
+    {
+        "fechaHora": "2025-03-29T19:23:31.939Z",
+        "precioCompra": 12.2661,
+        "precioVenta": 12.39
+    },
+    {
+        "fechaHora": "2025-03-29T19:53:31.940Z",
+        "precioCompra": 12.2661,
+        "precioVenta": 12.39
+    },
+    {
+        "fechaHora": "2025-03-31T02:43:11.463Z",
+        "precioCompra": 12.2661,
+        "precioVenta": 12.39
+    },
+    {
+        "fechaHora": "2025-03-31T13:56:23.779Z",
+        "precioCompra": 12.2661,
+        "precioVenta": 12.39
+    },
+    {
+        "fechaHora": "2025-03-31T14:26:26.201Z",
+        "precioCompra": 12.2661,
+        "precioVenta": 12.39
+    },
+    {
+        "fechaHora": "2025-03-31T14:56:26.201Z",
+        "precioCompra": 12.2661,
+        "precioVenta": 12.39
+    },
+    {
+        "fechaHora": "2025-03-31T15:26:25.211Z",
+        "precioCompra": 12.2661,
+        "precioVenta": 12.39
+    },
+    {
+        "fechaHora": "2025-03-31T15:56:26.203Z",
+        "precioCompra": 12.2661,
+        "precioVenta": 12.39
+    },
+    {
+        "fechaHora": "2025-03-31T18:41:59.122Z",
+        "precioCompra": 12.256200000000002,
+        "precioVenta": 12.38
+    },
+    {
+        "fechaHora": "2025-03-31T19:12:00.202Z",
+        "precioCompra": 12.256200000000002,
+        "precioVenta": 12.38
+    },
+    {
+        "fechaHora": "2025-03-31T19:41:59.954Z",
+        "precioCompra": 12.256200000000002,
+        "precioVenta": 12.38
+    },
+    {
+        "fechaHora": "2025-03-31T19:44:54.319Z",
+        "precioCompra": 12.276,
+        "precioVenta": 12.4
+    },
+    {
+        "fechaHora": "2025-04-01T00:33:46.369Z",
+        "precioCompra": 12.2661,
+        "precioVenta": 12.39
+    },
+    {
+        "fechaHora": "2025-04-01T14:34:39.241Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-01T15:04:41.194Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-01T15:34:41.200Z",
+        "precioCompra": 12.2859,
+        "precioVenta": 12.41
+    },
+    {
+        "fechaHora": "2025-04-01T16:04:41.196Z",
+        "precioCompra": 12.2859,
+        "precioVenta": 12.41
+    },
+    {
+        "fechaHora": "2025-04-01T16:34:41.204Z",
+        "precioCompra": 12.2859,
+        "precioVenta": 12.41
+    },
+    {
+        "fechaHora": "2025-04-01T17:05:40.196Z",
+        "precioCompra": 12.3156,
+        "precioVenta": 12.44
+    },
+    {
+        "fechaHora": "2025-04-01T17:35:40.192Z",
+        "precioCompra": 12.3156,
+        "precioVenta": 12.44
+    },
+    {
+        "fechaHora": "2025-04-01T18:05:40.203Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-01T18:35:40.204Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-01T19:04:40.812Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-01T19:34:40.814Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-01T20:04:40.818Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-01T20:34:40.815Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-01T21:04:40.814Z",
+        "precioCompra": 12.3156,
+        "precioVenta": 12.44
+    },
+    {
+        "fechaHora": "2025-04-01T21:34:40.820Z",
+        "precioCompra": 12.3156,
+        "precioVenta": 12.44
+    },
+    {
+        "fechaHora": "2025-04-01T22:04:40.820Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-01T22:34:40.818Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-01T23:04:40.822Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-01T23:34:40.823Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-02T00:04:40.823Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-02T00:34:40.822Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-02T01:04:40.812Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-02T01:34:40.820Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-02T02:04:40.814Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-02T02:34:40.821Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-02T03:04:40.509Z",
+        "precioCompra": 12.3057,
+        "precioVenta": 12.43
+    },
+    {
+        "fechaHora": "2025-04-03T13:43:36.195Z",
+        "precioCompra": 12.5334,
+        "precioVenta": 12.66
+    },
+    {
+        "fechaHora": "2025-04-03T14:13:38.816Z",
+        "precioCompra": 12.5334,
+        "precioVenta": 12.66
+    },
+    {
+        "fechaHora": "2025-04-03T14:43:38.825Z",
+        "precioCompra": 12.652199999999999,
+        "precioVenta": 12.78
+    },
+    {
+        "fechaHora": "2025-04-03T15:13:38.820Z",
+        "precioCompra": 12.652199999999999,
+        "precioVenta": 12.78
+    },
+    {
+        "fechaHora": "2025-04-03T15:43:38.825Z",
+        "precioCompra": 12.8205,
+        "precioVenta": 12.95
+    },
+    {
+        "fechaHora": "2025-04-03T16:14:06.815Z",
+        "precioCompra": 12.8205,
+        "precioVenta": 12.95
+    },
+    {
+        "fechaHora": "2025-04-03T16:44:06.814Z",
+        "precioCompra": 12.662099999999999,
+        "precioVenta": 12.79
+    },
+    {
+        "fechaHora": "2025-04-03T17:14:06.811Z",
+        "precioCompra": 12.662099999999999,
+        "precioVenta": 12.79
+    },
+    {
+        "fechaHora": "2025-04-03T17:44:06.826Z",
+        "precioCompra": 12.572999999999999,
+        "precioVenta": 12.7
+    },
+    {
+        "fechaHora": "2025-04-03T18:14:06.814Z",
+        "precioCompra": 12.572999999999999,
+        "precioVenta": 12.7
+    },
+    {
+        "fechaHora": "2025-04-03T18:44:06.820Z",
+        "precioCompra": 12.6126,
+        "precioVenta": 12.74
+    },
+    {
+        "fechaHora": "2025-04-03T19:14:06.815Z",
+        "precioCompra": 12.6126,
+        "precioVenta": 12.74
+    },
+    {
+        "fechaHora": "2025-04-04T22:17:25.443Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-04T22:47:31.082Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-04T23:17:31.079Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-04T23:47:31.073Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-05T02:29:18.437Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-05T14:41:53.510Z",
+        "precioCompra": 12.741299999999999,
+        "precioVenta": 12.87
+    },
+    {
+        "fechaHora": "2025-04-05T15:11:55.202Z",
+        "precioCompra": 12.741299999999999,
+        "precioVenta": 12.87
+    },
+    {
+        "fechaHora": "2025-04-05T15:41:55.201Z",
+        "precioCompra": 12.741299999999999,
+        "precioVenta": 12.87
+    },
+    {
+        "fechaHora": "2025-04-05T19:22:40.361Z",
+        "precioCompra": 12.721499999999999,
+        "precioVenta": 12.85
+    },
+    {
+        "fechaHora": "2025-04-05T19:52:41.608Z",
+        "precioCompra": 12.721499999999999,
+        "precioVenta": 12.85
+    },
+    {
+        "fechaHora": "2025-04-05T20:22:41.614Z",
+        "precioCompra": 12.721499999999999,
+        "precioVenta": 12.85
+    },
+    {
+        "fechaHora": "2025-04-05T20:52:41.607Z",
+        "precioCompra": 12.721499999999999,
+        "precioVenta": 12.85
+    },
+    {
+        "fechaHora": "2025-04-05T21:22:42.190Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-05T21:53:23.203Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-05T22:23:23.911Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-05T22:53:23.901Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-05T23:23:23.914Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-05T23:53:23.914Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-06T00:23:23.913Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-06T00:53:23.909Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-06T01:47:40.368Z",
+        "precioCompra": 12.731399999999999,
+        "precioVenta": 12.86
+    },
+    {
+        "fechaHora": "2025-04-07T13:19:24.731Z",
+        "precioCompra": 12.8205,
+        "precioVenta": 12.95
+    },
+    {
+        "fechaHora": "2025-04-07T13:49:26.923Z",
+        "precioCompra": 12.8205,
+        "precioVenta": 12.95
+    },
+    {
+        "fechaHora": "2025-04-07T14:19:26.922Z",
+        "precioCompra": 12.8205,
+        "precioVenta": 12.95
+    },
+    {
+        "fechaHora": "2025-04-07T14:49:26.928Z",
+        "precioCompra": 12.8205,
+        "precioVenta": 12.95
+    },
+    {
+        "fechaHora": "2025-04-07T15:19:26.927Z",
+        "precioCompra": 12.8205,
+        "precioVenta": 12.95
+    },
+    {
+        "fechaHora": "2025-04-07T15:50:01.928Z",
+        "precioCompra": 12.810599999999999,
+        "precioVenta": 12.94
+    },
+    {
+        "fechaHora": "2025-04-07T16:20:01.932Z",
+        "precioCompra": 12.810599999999999,
+        "precioVenta": 12.94
+    },
+    {
+        "fechaHora": "2025-04-07T16:50:01.936Z",
+        "precioCompra": 12.800699999999999,
+        "precioVenta": 12.93
+    },
+    {
+        "fechaHora": "2025-04-07T18:27:24.916Z",
+        "precioCompra": 12.800699999999999,
+        "precioVenta": 12.93
+    },
+    {
+        "fechaHora": "2025-04-09T14:27:21.323Z",
+        "precioCompra": 13.1175,
+        "precioVenta": 13.25
+    },
+    {
+        "fechaHora": "2025-04-09T14:57:24.823Z",
+        "precioCompra": 13.1175,
+        "precioVenta": 13.25
+    },
+    {
+        "fechaHora": "2025-04-09T15:27:24.833Z",
+        "precioCompra": 13.1868,
+        "precioVenta": 13.32
+    },
+    {
+        "fechaHora": "2025-04-09T15:57:24.821Z",
+        "precioCompra": 13.1868,
+        "precioVenta": 13.32
+    },
+    {
+        "fechaHora": "2025-04-09T16:27:24.829Z",
+        "precioCompra": 13.2957,
+        "precioVenta": 13.43
+    },
+    {
+        "fechaHora": "2025-04-09T16:58:05.827Z",
+        "precioCompra": 13.2957,
+        "precioVenta": 13.43
+    },
+    {
+        "fechaHora": "2025-04-09T17:28:05.828Z",
+        "precioCompra": 13.365,
+        "precioVenta": 13.5
+    },
+    {
+        "fechaHora": "2025-04-09T17:51:48.867Z",
+        "precioCompra": 13.365,
+        "precioVenta": 13.5
+    },
+    {
+        "fechaHora": "2025-04-09T18:21:49.045Z",
+        "precioCompra": 13.3551,
+        "precioVenta": 13.49
+    },
+    {
+        "fechaHora": "2025-04-09T18:51:49.040Z",
+        "precioCompra": 13.3551,
+        "precioVenta": 13.49
+    },
+    {
+        "fechaHora": "2025-04-09T19:21:49.043Z",
+        "precioCompra": 13.365,
+        "precioVenta": 13.5
+    },
+    {
+        "fechaHora": "2025-04-09T19:51:49.037Z",
+        "precioCompra": 13.365,
+        "precioVenta": 13.5
+    },
+    {
+        "fechaHora": "2025-04-09T20:09:13.224Z",
+        "precioCompra": 13.365,
+        "precioVenta": 13.5
+    },
+    {
+        "fechaHora": "2025-04-09T20:39:14.182Z",
+        "precioCompra": 13.3452,
+        "precioVenta": 13.48
+    },
+    {
+        "fechaHora": "2025-04-09T21:09:14.196Z",
+        "precioCompra": 13.3452,
+        "precioVenta": 13.48
+    },
+    {
+        "fechaHora": "2025-04-09T21:39:14.186Z",
+        "precioCompra": 13.1571,
+        "precioVenta": 13.29
+    },
+    {
+        "fechaHora": "2025-04-09T22:09:14.195Z",
+        "precioCompra": 13.1571,
+        "precioVenta": 13.29
+    },
+    {
+        "fechaHora": "2025-04-09T22:39:22.195Z",
+        "precioCompra": 13.1571,
+        "precioVenta": 13.29
+    },
+    {
+        "fechaHora": "2025-04-09T23:09:22.190Z",
+        "precioCompra": 13.1571,
+        "precioVenta": 13.29
+    },
+    {
+        "fechaHora": "2025-04-09T23:39:22.183Z",
+        "precioCompra": 13.1571,
+        "precioVenta": 13.29
+    },
+    {
+        "fechaHora": "2025-04-10T00:09:22.194Z",
+        "precioCompra": 13.1571,
+        "precioVenta": 13.29
+    },
+    {
+        "fechaHora": "2025-04-10T03:08:38.816Z",
+        "precioCompra": 13.1571,
+        "precioVenta": 13.29
+    },
+    {
+        "fechaHora": "2025-04-10T13:08:17.164Z",
+        "precioCompra": 13.2066,
+        "precioVenta": 13.34
+    },
+    {
+        "fechaHora": "2025-04-10T13:38:20.196Z",
+        "precioCompra": 13.2066,
+        "precioVenta": 13.34
+    },
+    {
+        "fechaHora": "2025-04-10T14:08:20.203Z",
+        "precioCompra": 13.2264,
+        "precioVenta": 13.36
+    },
+    {
+        "fechaHora": "2025-04-10T14:38:19.065Z",
+        "precioCompra": 13.2264,
+        "precioVenta": 13.36
+    },
+    {
+        "fechaHora": "2025-04-10T15:08:19.061Z",
+        "precioCompra": 13.2264,
+        "precioVenta": 13.36
+    },
+    {
+        "fechaHora": "2025-04-10T15:38:36.065Z",
+        "precioCompra": 13.266,
+        "precioVenta": 13.4
+    },
+    {
+        "fechaHora": "2025-04-10T16:08:36.063Z",
+        "precioCompra": 13.266,
+        "precioVenta": 13.4
+    },
+    {
+        "fechaHora": "2025-04-10T16:38:36.068Z",
+        "precioCompra": 13.266,
+        "precioVenta": 13.4
+    },
+    {
+        "fechaHora": "2025-04-10T17:08:36.060Z",
+        "precioCompra": 13.266,
+        "precioVenta": 13.4
+    },
+    {
+        "fechaHora": "2025-04-10T17:38:36.062Z",
+        "precioCompra": 13.2858,
+        "precioVenta": 13.42
+    },
+    {
+        "fechaHora": "2025-04-10T18:08:36.074Z",
+        "precioCompra": 13.2858,
+        "precioVenta": 13.42
+    },
+    {
+        "fechaHora": "2025-04-11T00:47:48.144Z",
+        "precioCompra": 13.2957,
+        "precioVenta": 13.43
+    },
+    {
+        "fechaHora": "2025-04-11T01:17:49.070Z",
+        "precioCompra": 13.3452,
+        "precioVenta": 13.48
+    },
+    {
+        "fechaHora": "2025-04-11T01:47:49.062Z",
+        "precioCompra": 13.3452,
+        "precioVenta": 13.48
+    },
+    {
+        "fechaHora": "2025-04-11T02:17:49.063Z",
+        "precioCompra": 13.3452,
+        "precioVenta": 13.48
+    },
+    {
+        "fechaHora": "2025-04-11T02:47:49.067Z",
+        "precioCompra": 13.3452,
+        "precioVenta": 13.48
+    },
+    {
+        "fechaHora": "2025-04-11T03:18:36.063Z",
+        "precioCompra": 13.3452,
+        "precioVenta": 13.48
+    },
+    {
+        "fechaHora": "2025-04-11T12:57:40.922Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-11T13:11:16.585Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-11T13:41:18.197Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-11T14:11:18.206Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-11T14:41:17.613Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-11T15:11:17.617Z",
+        "precioCompra": 13.404599999999999,
+        "precioVenta": 13.54
+    },
+    {
+        "fechaHora": "2025-04-11T15:42:05.607Z",
+        "precioCompra": 13.404599999999999,
+        "precioVenta": 13.54
+    },
+    {
+        "fechaHora": "2025-04-11T16:11:16.830Z",
+        "precioCompra": 13.404599999999999,
+        "precioVenta": 13.54
+    },
+    {
+        "fechaHora": "2025-04-11T16:41:16.833Z",
+        "precioCompra": 13.404599999999999,
+        "precioVenta": 13.54
+    },
+    {
+        "fechaHora": "2025-04-11T17:11:16.830Z",
+        "precioCompra": 13.4145,
+        "precioVenta": 13.55
+    },
+    {
+        "fechaHora": "2025-04-11T17:41:16.822Z",
+        "precioCompra": 13.4145,
+        "precioVenta": 13.55
+    },
+    {
+        "fechaHora": "2025-04-11T18:11:16.827Z",
+        "precioCompra": 13.4145,
+        "precioVenta": 13.55
+    },
+    {
+        "fechaHora": "2025-04-11T18:41:16.829Z",
+        "precioCompra": 13.4145,
+        "precioVenta": 13.55
+    },
+    {
+        "fechaHora": "2025-04-11T19:11:16.825Z",
+        "precioCompra": 13.4442,
+        "precioVenta": 13.58
+    },
+    {
+        "fechaHora": "2025-04-11T19:41:16.820Z",
+        "precioCompra": 13.4442,
+        "precioVenta": 13.58
+    },
+    {
+        "fechaHora": "2025-04-11T20:11:16.823Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-11T20:41:16.830Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-11T21:11:16.821Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-11T21:41:16.827Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-11T21:59:57.578Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-11T22:29:57.692Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-11T22:59:57.682Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-11T23:29:57.692Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-11T23:59:57.693Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-12T00:29:57.680Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-12T00:59:57.685Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-12T01:30:05.616Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-12T02:00:05.614Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-12T02:30:05.605Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-12T03:00:05.611Z",
+        "precioCompra": 13.394699999999998,
+        "precioVenta": 13.53
+    },
+    {
+        "fechaHora": "2025-04-12T22:34:58.409Z",
+        "precioCompra": 13.2165,
+        "precioVenta": 13.35
+    }
+]

@@ -89,4 +89,55 @@
     align-items: center;
 }
 
+.disclaimer-banner {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ffeeba;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.disclaimer-banner i {
+    font-size: 18px;
+    color: #856404;
+}
+
+[data-theme="dark"] .disclaimer-banner {
+    background-color: #382d23;
+    color: #ffd975;
+    border-color: #665435;
+}
+
+/* Mejorar los colores del gráfico */
+.price-up {
+    color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-color: #4CAF50;
+}
+
+.price-down {
+    color: #f44336;
+    background-color: rgba(244, 67, 54, 0.1);
+    border-color: #f44336;
+}
+
+.chart-green {
+    color: #4CAF50;
+}
+
+.chart-red {
+    color: #f44336;
+}
+
 /* ...existing code... */
