@@ -133,7 +133,7 @@ function crearGrafico(canvas, datos, etiquetas, preciosVenta, etiqueta) {
                '#f44336';  // Rojo para bajada
     });
 
-    return new Chart(canvas, {
+    const config = {
         type: "line",
         data: {
             labels: etiquetas,
@@ -151,144 +151,137 @@ function crearGrafico(canvas, datos, etiquetas, preciosVenta, etiqueta) {
                     if (index === 0) return '#4CAF50';
                     return preciosVenta[index] > preciosVenta[index-1] ? '#4CAF50' : '#f44336';
                 },
-                segment: {
-                    borderColor: ctx => {
-                        if (!ctx.p0.parsed) return '#4CAF50';
-                        return ctx.p0.parsed.y > ctx.p1.parsed.y ? '#f44336' : '#4CAF50';
-                    }
-                }
+                fill: true
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            animation: {
+                duration: 750,
+                easing: 'easeInOutQuart'
+            },
+            interaction: {
+                intersect: false,
+                mode: 'index',
+                axis: 'x'
+            },
             scales: {
                 x: { 
                     grid: {
-                        display: false
+                        display: false,
+                        drawBorder: false
                     },
                     ticks: {
                         maxRotation: 45,
                         minRotation: 45,
                         autoSkip: true,
-                        maxTicksLimit: 10
+                        maxTicksLimit: 10,
+                        padding: 8
                     },
                     title: {
                         display: true,
-                        text: 'Fecha/Hora'
+                        text: 'Fecha/Hora',
+                        padding: {top: 10}
                     }
                 },
                 y: { 
                     beginAtZero: false,
+                    position: 'right',
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.05)',
+                        drawBorder: false
+                    },
                     ticks: {
                         callback: function(value) {
                             return value.toFixed(2) + ' Bs/$US';
-                        }
+                        },
+                        padding: 8
                     },
                     title: {
                         display: true,
-                        text: 'Valor en Bs por $US'
+                        text: 'Valor en Bs por $US',
+                        padding: {bottom: 10}
                     }
                 }
             },
-            interaction: {
-                mode: 'index',
-                intersect: false
-            },
             plugins: {
-                legend: {
-                    position: 'top',
-                },
                 tooltip: {
+                    enabled: true,
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    titleFont: {
+                        weight: 'bold'
+                    },
                     callbacks: {
                         label: function(context) {
-                            const index = context.dataIndex;
-                            const currentValue = context.parsed.y;
-                            const prevValue = index > 0 ? context.dataset.data[index - 1] : currentValue;
-                            const change = currentValue - prevValue;
-                            const changePercent = ((change / prevValue) * 100).toFixed(2);
+                            const value = context.parsed.y;
+                            const prevValue = context.dataset.data[context.dataIndex - 1];
+                            let change = 0;
+                            let changePercent = 0;
+                            
+                            if (prevValue) {
+                                change = value - prevValue;
+                                changePercent = (change / prevValue * 100);
+                            }
                             
                             return [
-                                `${etiqueta}: ${currentValue.toFixed(4)} Bs/$US`,
-                                `Cambio: ${change >= 0 ? '+' : ''}${change.toFixed(4)} (${changePercent}%)`
+                                `Valor: ${value.toFixed(4)} Bs/$US`,
+                                `Cambio: ${change >= 0 ? '+' : ''}${change.toFixed(4)} (${changePercent.toFixed(2)}%)`
                             ];
-                        },
-                        labelColor: function(context) {
-                            const index = context.dataIndex;
-                            const currentValue = context.parsed.y;
-                            const prevValue = index > 0 ? context.dataset.data[index - 1] : currentValue;
-                            
-                            return {
-                                borderColor: currentValue >= prevValue ? '#4CAF50' : '#f44336',
-                                backgroundColor: currentValue >= prevValue ? 'rgba(76, 175, 80, 0.2)' : 'rgba(244, 67, 54, 0.2)'
-                            };
-                        }
-                    }
-                },
-                annotation: {
-                    annotations: {
-                        lineMax: {
-                            type: 'line',
-                            yMin: max,
-                            yMax: max,
-                            borderColor: 'rgba(75, 192, 192, 0.5)',
-                            borderWidth: 1,
-                            borderDash: [5, 5],
-                            label: {
-                                content: `Max: ${max.toFixed(4)} Bs/$US`,
-                                enabled: true,
-                                position: 'left'
-                            }
-                        },
-                        lineMin: {
-                            type: 'line',
-                            yMin: min,
-                            yMax: min,
-                            borderColor: 'rgba(255, 99, 132, 0.5)',
-                            borderWidth: 1,
-                            borderDash: [5, 5],
-                            label: {
-                                content: `Min: ${min.toFixed(4)} Bs/$US`,
-                                enabled: true,
-                                position: 'left'
-                            }
-                        },
-                        lineAvg: {
-                            type: 'line',
-                            yMin: promedio,
-                            yMax: promedio,
-                            borderColor: 'rgba(201, 203, 207, 0.5)',
-                            borderWidth: 1,
-                            borderDash: [3, 3],
-                            label: {
-                                content: `Prom: ${promedio.toFixed(4)} Bs/$US`,
-                                enabled: true,
-                                position: 'right'
-                            }
                         }
                     }
                 },
                 zoom: {
                     pan: {
                         enabled: true,
-                        mode: 'xy',
+                        mode: 'x',
+                        modifierKey: 'ctrl'
                     },
                     zoom: {
-                        wheel: { 
-                            enabled: true 
+                        wheel: {
+                            enabled: true,
+                            modifierKey: 'ctrl'
                         },
-                        pinch: { 
-                            enabled: true 
+                        pinch: {
+                            enabled: true
                         },
-                        mode: 'xy',
+                        mode: 'x',
+                        drag: {
+                            enabled: true,
+                            backgroundColor: 'rgba(0,0,0,0.1)',
+                            borderColor: 'rgba(0,0,0,0.3)',
+                            borderWidth: 1
+                        }
                     },
                     limits: {
-                        y: {min: min * 0.95, max: max * 1.05}
+                        y: {
+                            min: 'original',
+                            max: 'original'
+                        }
+                    }
+                },
+                crosshair: {
+                    line: {
+                        color: 'rgba(0, 0, 0, 0.3)',
+                        width: 1,
+                        dashPattern: [6, 6]
+                    },
+                    sync: {
+                        enabled: true
+                    },
+                    zoom: {
+                        enabled: true
                     }
                 }
             }
         }
-    });
+    };
+
+    if (window.graficoActual) {
+        window.graficoActual.destroy();
+    }
+    window.graficoActual = new Chart(canvas, config);
+    return window.graficoActual;
 }
 
 function graficarDatos(moneda) {
@@ -786,3 +779,49 @@ function guardarDatos(fechaHora, moneda, precioCompra, precioVenta) {
         localStorage.setItem(clave, JSON.stringify(datos));
     }
 }
+
+// Configuración de WebSocket
+let ws;
+function conectarWebSocket() {
+    const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    const wsUrl = `${wsProtocol}//${window.location.host}`;
+    ws = new WebSocket(wsUrl);
+
+    ws.onmessage = (event) => {
+        const datos = JSON.parse(event.data);
+        if (datos.type === 'nueva_cotizacion') {
+            actualizarDatosEnTiempoReal(datos.data);
+        }
+    };
+
+    ws.onclose = () => {
+        console.log('Conexión WebSocket cerrada. Reconectando...');
+        setTimeout(conectarWebSocket, 5000);
+    };
+
+    ws.onerror = (error) => {
+        console.error('Error en WebSocket:', error);
+    };
+}
+
+function actualizarDatosEnTiempoReal(nuevaCotizacion) {
+    // Agregar nueva cotización a los datos existentes
+    if (!window.datosValidos) window.datosValidos = [];
+    window.datosValidos.push(nuevaCotizacion);
+    
+    // Ordenar por fecha
+    window.datosValidos.sort((a, b) => new Date(a.fechaHora) - new Date(b.fechaHora));
+    
+    // Actualizar gráfico con animación
+    const periodoActual = document.querySelector('.period-btn.active')?.dataset.period || '1w';
+    filtrarYMostrarDatos(periodoActual);
+    
+    // Actualizar estadísticas
+    actualizarEstadisticas('$Bs', window.datosValidos);
+}
+
+// Iniciar conexión WebSocket al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    conectarWebSocket();
+    main();
+});

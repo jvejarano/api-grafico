@@ -2,10 +2,37 @@ const express = require('express');
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
+const WebSocket = require('ws');
 
 // Inicializar la aplicación Express
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Crear servidor WebSocket
+const wss = new WebSocket.Server({ noServer: true });
+
+// Almacenar conexiones WebSocket activas
+const clients = new Set();
+
+// Configurar WebSocket
+wss.on('connection', (ws) => {
+    clients.add(ws);
+    console.log('✅ Nueva conexión WebSocket establecida');
+
+    ws.on('close', () => {
+        clients.delete(ws);
+        console.log('❌ Conexión WebSocket cerrada');
+    });
+});
+
+// Función para enviar actualizaciones a todos los clientes
+function broadcastUpdate(data) {
+    clients.forEach(client => {
+        if (client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify(data));
+        }
+    });
+}
 
 // Middleware
 app.use(cors()); // Habilitar CORS para peticiones desde el frontend
@@ -94,6 +121,20 @@ app.post('/api/cotizacion', (req, res) => {
         
         console.log(`✅ Nueva cotización guardada con ID: ${this.lastID}`);
         
+        const nuevaCotizacion = {
+            id: this.lastID,
+            fechaHora: fechaFormateada,
+            moneda,
+            precioCompra: compra,
+            precioVenta: venta
+        };
+
+        // Enviar actualización a todos los clientes conectados
+        broadcastUpdate({
+            type: 'nueva_cotizacion',
+            data: nuevaCotizacion
+        });
+
         // Verificar inmediatamente que se guardó
         db.get('SELECT * FROM cotizaciones WHERE id = ?', [this.lastID], (err, row) => {
             if (err) {
@@ -106,12 +147,7 @@ app.post('/api/cotizacion', (req, res) => {
         res.status(201).json({
             id: this.lastID,
             mensaje: 'Cotización guardada exitosamente',
-            datos: {
-                fechaHora: fechaFormateada,
-                moneda,
-                precioCompra: compra,
-                precioVenta: venta
-            }
+            datos: nuevaCotizacion
         });
     });
 });
@@ -191,10 +227,17 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Iniciar el servidor
-app.listen(port, () => {
+// Iniciar el servidor HTTP
+const server = app.listen(port, () => {
     console.log(`✅ Servidor corriendo en http://localhost:${port}`);
     console.log('📊 API de Cotizaciones inicializada');
+});
+
+// Integrar WebSocket con el servidor HTTP
+server.on('upgrade', (request, socket, head) => {
+    wss.handleUpgrade(request, socket, head, (ws) => {
+        wss.emit('connection', ws, request);
+    });
 });
 
 // Manejo de cierre graceful

@@ -223,37 +223,45 @@ select {
 
 .stat-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .stat-item {
     display: flex;
     flex-direction: column;
-    background: var(--card-background);
-    padding: 10px;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    border: 1px solid var(--accent-color);
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .stat-label {
     font-size: 12px;
     color: #7f8c8d;
     margin-bottom: 5px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.25rem;
 }
 
 .stat-value {
     font-size: 16px;
     font-weight: bold;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
-.positivo {
+.stat-value.positivo {
     color: #27ae60;
+    color: #4CAF50;
 }
 
-.negativo {
+.stat-value.negativo {
     color: #e74c3c;
+    color: #f44336;
 }
 
 .estado {
@@ -412,4 +420,38 @@ select {
     .grafico-contenedor {
         padding: 10px;
     }
+}
+
+/* Chart enhancements */
+.grafico-canvas-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* Zoom controls */
+.chartjs-zoom-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--card-bg);
+    border-radius: 4px;
+    padding: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Crosshair style */
+.chartjs-crosshair {
+    pointer-events: none;
+}
+
+/* Tooltip enhancements */
+.chartjs-tooltip {
+    background: var(--card-bg) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+    padding: 8px 12px !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color) !important;
 }
