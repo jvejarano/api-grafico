@@ -1,77 +1,75 @@
-# Proyecto: Cotización de Criptomonedas con SQLite y Node.js
+# Sistema de Cotización del Dólar en Bolivia
 
 ## Descripción
-Este proyecto permite obtener la cotización de criptomonedas en Binance, almacenarlas en una base de datos **SQLite** y visualizar la información mediante gráficos en una interfaz web.
+
+Aplicación web que muestra en tiempo real la cotización del dólar en Bolivia, utilizando datos de Binance y fuentes oficiales. Incluye visualización gráfica interactiva y estadísticas detalladas.
+
+## Características Principales
+
+- Visualización en tiempo real de cotizaciones
+- Gráfico interactivo con múltiples períodos de tiempo
+- Tema claro/oscuro
+- Estadísticas detalladas (máximo, mínimo, promedio, volatilidad)
+- Interfaz responsive
+- Actualización automática de datos
+- Comparación entre dólar Binance y oficial
 
 ## Tecnologías Utilizadas
-- **Node.js**: Para el backend y la API.
-- **Express.js**: Para manejar las rutas y las solicitudes HTTP.
-- **SQLite**: Para almacenar las cotizaciones de criptomonedas.
-- **Chart.js**: Para graficar los datos en el frontend.
-- **HTML, CSS y JavaScript**: Para la interfaz de usuario.
+
+- **Chart.js**: Gráficos interactivos con zoom y pan
+- **WebSocket**: Actualizaciones en tiempo real
+- **LocalStorage**: Almacenamiento local de datos históricos
+- **CSS Variables**: Tematización dinámica
+- **Fetch API**: Comunicación con servicios externos
+- **JavaScript Moderno**: ES6+ features
 
 ## Instalación
-### 1. Clonar el repositorio
+
+1. Clonar el repositorio
+
 ```bash
-git clone https://github.com/tu-usuario/tu-repositorio.git
-cd tu-repositorio
+git clone https://github.com/tu-usuario/api-grafico.git
+cd api-grafico
 ```
 
-### 2. Instalar dependencias
-Asegúrate de tener **Node.js** instalado. Luego, instala las dependencias con:
-```bash
-npm install
-```
-
-### 3. Crear la base de datos SQLite
-Ejecuta el siguiente comando para crear el archivo de base de datos:
-```bash
-touch database.sqlite
-```
-
-### 4. Iniciar el servidor
-```bash
-node main.js
-```
-Esto iniciará el servidor en **http://localhost:3000**.
+2. Abrir index.html en un navegador web moderno
 
 ## Uso
-### Guardar una cotización
-Puedes enviar datos a la API con el siguiente comando:
-```bash
-curl -X POST http://localhost:3000/cotizaciones \
-     -H "Content-Type: application/json" \
-     -d '{"fecha_hora": "2025-02-20 10:00:00", "moneda": "BTC", "precio_compra": 69000, "precio_venta": 70000}'
-```
 
-### Obtener cotizaciones
-Para obtener todas las cotizaciones de una moneda:
-```bash
-curl http://localhost:3000/cotizaciones?moneda=BTC
-```
-
-### Interfaz web
-1. Abre `index.html` en un navegador.
-2. La aplicación recuperará los datos desde la API y generará gráficos con **Chart.js**.
+- **Selección de Período**: Utiliza los botones para ver diferentes rangos de tiempo
+- **Interacción con el Gráfico**:
+  - Zoom: Usar la rueda del mouse
+  - Pan: Click y arrastrar
+  - Tooltip: Mover el cursor sobre el gráfico
+- **Cambio de Tema**: Botón en la esquina superior derecha
 
 ## Estructura del Proyecto
+
 ```
 .
-├── database.sqlite        # Archivo de la base de datos
-├── index.html             # Interfaz web
-├── main.js                # Código principal del servidor
-├── package.json           # Configuración de Node.js
-├── README.md              # Documentación del proyecto
+├── index.html          # Página principal
+├── style.css          # Estilos y temas
+├── script.js          # Lógica principal y gráficos
+└── themeToggle.js     # Control del tema claro/oscuro
 ```
 
-## Mejoras Futuras
-- Agregar autenticación para proteger la API.
-- Implementar WebSockets para actualizaciones en tiempo real.
-- Soporte para múltiples monedas.
+## API Endpoints
 
-## Contribución
-Si deseas contribuir, **haz un fork del repositorio** y envía un Pull Request con tus mejoras.
+- GET `/v1/dolares/binance`: Cotización actual de Binance
+- GET `/v1/dolares/oficial`: Cotización oficial
+
+## Mejoras Futuras
+
+- Añadir más fuentes de cotización
+- Implementar exportación de datos
+- Añadir alertas de precio
+- Mejorar la persistencia de datos
+- Implementar PWA
+
+## Notas
+
+Los datos mostrados son referenciales y no deben usarse como base para transacciones financieras.
 
 ## Licencia
-Este proyecto se distribuye bajo la licencia MIT.
 
+MIT License

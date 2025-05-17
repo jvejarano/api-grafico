@@ -188,21 +188,30 @@ function crearGrafico(canvas, datos, etiquetas, preciosVenta, etiqueta) {
                 y: { 
                     beginAtZero: false,
                     position: 'right',
+                    grace: '5%',
                     grid: {
-                        color: 'rgba(0, 0, 0, 0.05)',
-                        drawBorder: false
+                        color: 'rgba(0, 0, 0, 0.1)',
+                        drawBorder: false,
+                        lineWidth: 0.5
                     },
                     ticks: {
+                        stepSize: 0.25,
+                        maxTicksLimit: 20,
                         callback: function(value) {
                             return value.toFixed(2) + ' Bs/$US';
                         },
-                        padding: 8
+                        padding: 8,
+                        font: {
+                            family: 'Consolas, monospace'
+                        }
                     },
                     title: {
                         display: true,
                         text: 'Valor en Bs por $US',
                         padding: {bottom: 10}
-                    }
+                    },
+                    suggestedMin: Math.floor(Math.min(...preciosVenta) * 4) / 4,
+                    suggestedMax: Math.ceil(Math.max(...preciosVenta) * 4) / 4
                 }
             },
             plugins: {
