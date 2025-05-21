@@ -834,3 +834,44 @@ document.addEventListener('DOMContentLoaded', () => {
     conectarWebSocket();
     main();
 });
+
+function calcularConversion() {
+    const monto = parseFloat(document.getElementById('montoCalculadora').value);
+    const tipo = document.getElementById('tipoConversion').value;
+    const precioVentaBinance = parseFloat(document.getElementById('precioVentaBinance').textContent.replace('$', ''));
+    
+    if (isNaN(monto) || monto < 0) {
+        alert('Por favor, ingrese un monto válido');
+        return;
+    }
+
+    if (isNaN(precioVentaBinance)) {
+        alert('Cotización no disponible en este momento');
+        return;
+    }
+
+    let resultado;
+    if (tipo === 'usdToBob') {
+        resultado = monto * precioVentaBinance;
+        document.getElementById('resultadoConversion').textContent = 
+            resultado.toFixed(2) + ' BOB';
+    } else {
+        resultado = monto / precioVentaBinance;
+        document.getElementById('resultadoConversion').textContent = 
+            resultado.toFixed(2) + ' USD';
+    }
+}
+
+// Inicializar la calculadora
+document.addEventListener('DOMContentLoaded', () => {
+    conectarWebSocket();
+    main();
+    
+    // Eventos de la calculadora
+    document.getElementById('calcular')?.addEventListener('click', calcularConversion);
+    document.getElementById('montoCalculadora')?.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            calcularConversion();
+        }
+    });
+});
