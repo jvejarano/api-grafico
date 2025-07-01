@@ -385,32 +385,70 @@ function filtrarYMostrarDatos(periodo) {
     
     const ahora = new Date();
     let fechaLimite;
+    let datosFiltrados;
     
     switch(periodo) {
         case '1d':
             fechaLimite = new Date(ahora.getTime() - (24 * 60 * 60 * 1000));
+            // Para el último día, mostrar datos por hora y actualizaciones manuales
+            datosFiltrados = window.datosValidos
+                .filter(item => {
+                    const fechaItem = new Date(item.fechaHora);
+                    return fechaItem >= fechaLimite;
+                })
+                .sort((a, b) => new Date(a.fechaHora) - new Date(b.fechaHora))
+                .reduce((acc, curr) => {
+                    const fecha = new Date(curr.fechaHora);
+                    const hora = fecha.getHours();
+                    const ultimoItem = acc[acc.length - 1];
+                    
+                    // Incluir el dato si es una actualización manual o si es una nueva hora
+                    if (!ultimoItem || 
+                        new Date(ultimoItem.fechaHora).getHours() !== hora ||
+                        curr.actualizacionManual) {
+                        acc.push(curr);
+                    }
+                    
+                    return acc;
+                }, []);
             break;
         case '1w':
             fechaLimite = new Date(ahora.getTime() - (7 * 24 * 60 * 60 * 1000));
+            datosFiltrados = window.datosValidos.filter(item => {
+                const fechaItem = new Date(item.fechaHora);
+                return fechaItem >= fechaLimite;
+            });
             break;
         case '1m':
             fechaLimite = new Date(ahora.getTime() - (30 * 24 * 60 * 60 * 1000));
+            datosFiltrados = window.datosValidos.filter(item => {
+                const fechaItem = new Date(item.fechaHora);
+                return fechaItem >= fechaLimite;
+            });
             break;
         case 'all':
             fechaLimite = new Date(0);
+            datosFiltrados = window.datosValidos.filter(item => {
+                const fechaItem = new Date(item.fechaHora);
+                return fechaItem >= fechaLimite;
+            });
             break;
     }
-    
-    // Filtrar datos según el período seleccionado
-    const datosFiltrados = window.datosValidos.filter(item => {
-        const fechaItem = new Date(item.fechaHora);
-        return fechaItem >= fechaLimite;
-    });
-    
-    // Formatear fechas para la visualización
+      // Formatear fechas para la visualización
     const fechas = datosFiltrados.map(dato => {
         const fecha = new Date(dato.fechaHora);
-        return fecha.toLocaleDateString() + ' ' + fecha.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        if (periodo === '1d') {
+            // Para el último día, mostrar hora:minutos
+            return fecha.toLocaleTimeString([], {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false // Formato 24 horas
+            }) + (dato.actualizacionManual ? ' *' : '');
+        } else {
+            // Para otros períodos, mostrar fecha y hora
+            return fecha.toLocaleDateString() + ' ' + 
+                   fecha.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        }
     });
     
     const preciosVenta = datosFiltrados.map(dato => dato.precioVenta);
@@ -760,7 +798,7 @@ function actualizarGrafico(datosAMostrar) {
     });
 }
 
-function guardarDatos(fechaHora, moneda, precioCompra, precioVenta) {
+function guardarDatos(fechaHora, moneda, precioCompra, precioVenta, esManual = false) {
     const clave = `precios_${moneda}`;
     let datos = JSON.parse(localStorage.getItem(clave)) || [];
     
@@ -782,9 +820,15 @@ function guardarDatos(fechaHora, moneda, precioCompra, precioVenta) {
     const ultimoDato = datos[datos.length - 1];
     if (!ultimoDato || 
         Math.abs(ultimoDato.precioVenta - precioVenta) >= 0.01 || 
-        Math.abs(ultimoDato.precioCompra - precioCompra) >= 0.01) {
+        Math.abs(ultimoDato.precioCompra - precioCompra) >= 0.01 || 
+        esManual) {
         
-        datos.push({ fechaHora, precioCompra, precioVenta });
+        datos.push({ 
+            fechaHora, 
+            precioCompra, 
+            precioVenta,
+            actualizacionManual: esManual 
+        });
         localStorage.setItem(clave, JSON.stringify(datos));
     }
 }
