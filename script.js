@@ -390,27 +390,25 @@ function filtrarYMostrarDatos(periodo) {
     switch(periodo) {
         case '1d':
             fechaLimite = new Date(ahora.getTime() - (24 * 60 * 60 * 1000));
-            // Para el último día, mostrar datos por hora y actualizaciones manuales
-            datosFiltrados = window.datosValidos
+            // Agrupar por intervalos de 15 minutos y calcular promedio
+            const datosUltimoDia = window.datosValidos
                 .filter(item => {
                     const fechaItem = new Date(item.fechaHora);
                     return fechaItem >= fechaLimite;
                 })
-                .sort((a, b) => new Date(a.fechaHora) - new Date(b.fechaHora))
-                .reduce((acc, curr) => {
-                    const fecha = new Date(curr.fechaHora);
-                    const hora = fecha.getHours();
-                    const ultimoItem = acc[acc.length - 1];
-                    
-                    // Incluir el dato si es una actualización manual o si es una nueva hora
-                    if (!ultimoItem || 
-                        new Date(ultimoItem.fechaHora).getHours() !== hora ||
-                        curr.actualizacionManual) {
-                        acc.push(curr);
-                    }
-                    
-                    return acc;
-                }, []);
+                .sort((a, b) => new Date(a.fechaHora) - new Date(b.fechaHora));
+            const agrupados = {};
+            datosUltimoDia.forEach(d => {
+                const fecha = new Date(d.fechaHora);
+                const clave = fecha.getFullYear() + '-' + (fecha.getMonth()+1) + '-' + fecha.getDate() + ' ' +
+                    fecha.getHours() + ':' + (Math.floor(fecha.getMinutes()/15)*15).toString().padStart(2, '0');
+                if (!agrupados[clave]) agrupados[clave] = [];
+                agrupados[clave].push(d.precioVenta);
+            });
+            datosFiltrados = Object.entries(agrupados).map(([k, v]) => ({
+                fechaHora: k,
+                precioVenta: v.reduce((a, b) => a + b, 0) / v.length
+            }));
             break;
         case '1w':
             fechaLimite = new Date(ahora.getTime() - (7 * 24 * 60 * 60 * 1000));
@@ -434,7 +432,7 @@ function filtrarYMostrarDatos(periodo) {
             });
             break;
     }
-      // Formatear fechas para la visualización
+    // Formatear fechas para la visualización
     const fechas = datosFiltrados.map(dato => {
         const fecha = new Date(dato.fechaHora);
         if (periodo === '1d') {
@@ -443,16 +441,65 @@ function filtrarYMostrarDatos(periodo) {
                 hour: '2-digit',
                 minute: '2-digit',
                 hour12: false // Formato 24 horas
-            }) + (dato.actualizacionManual ? ' *' : '');
+            });
         } else {
             // Para otros períodos, mostrar fecha y hora
             return fecha.toLocaleDateString() + ' ' + 
                    fecha.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
         }
     });
-    
     const preciosVenta = datosFiltrados.map(dato => dato.precioVenta);
-    
+    // --- Calcular tendencia ---
+    let tendencia = '-';
+    if (preciosVenta.length > 1) {
+        const diff = preciosVenta[preciosVenta.length-1] - preciosVenta[0];
+        if (diff > 0.01) tendencia = 'Alcista';
+        else if (diff < -0.01) tendencia = 'Bajista';
+        else tendencia = 'Lateral';
+    }
+    document.getElementById('tendenciaValor').textContent = tendencia;
+    // --- Calcular horario de mayor volatilidad ---
+    let volatilidadHora = '-';
+    if (datosFiltrados.length > 2) {
+        // Agrupar por hora y calcular desviación estándar
+        const volatilidadPorHora = {};
+        datosFiltrados.forEach(d => {
+            const fecha = new Date(d.fechaHora);
+            const hora = fecha.getHours();
+            if (!volatilidadPorHora[hora]) volatilidadPorHora[hora] = [];
+            volatilidadPorHora[hora].push(d.precioVenta);
+        });
+        let maxVol = 0;
+        let horaMax = null;
+        for (const [hora, valores] of Object.entries(volatilidadPorHora)) {
+            if (valores.length > 1) {
+                const prom = valores.reduce((a,b) => a+b,0)/valores.length;
+                const varianza = valores.reduce((a,v) => a+Math.pow(v-prom,2),0)/valores.length;
+                const desv = Math.sqrt(varianza);
+                if (desv > maxVol) {
+                    maxVol = desv;
+                    horaMax = hora;
+                }
+            }
+        }
+        if (horaMax !== null) {
+            volatilidadHora = horaMax.padStart(2,'0')+':00-'+horaMax.padStart(2,'0')+':59';
+        }
+    }
+    document.getElementById('volatilidadHora').textContent = volatilidadHora;
+    // --- Calcular soporte y resistencia (mínimos y máximos locales) ---
+    let soporte = '-';
+    let resistencia = '-';
+    if (preciosVenta.length > 2) {
+        // Soporte: mínimo local (mínimo entre los valores, pero no el valor absoluto si está en los extremos)
+        let minLocal = Math.min(...preciosVenta);
+        let maxLocal = Math.max(...preciosVenta);
+        soporte = minLocal.toFixed(4) + ' Bs/$US';
+        resistencia = maxLocal.toFixed(4) + ' Bs/$US';
+    }
+    document.getElementById('soporteValor').textContent = soporte;
+    document.getElementById('resistenciaValor').textContent = resistencia;
+    // ---
     // Actualizar gráfico y estadísticas
     const canvas = document.getElementById("graficoCanvas");
     if (canvas) {

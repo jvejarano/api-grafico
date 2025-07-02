@@ -40,11 +40,16 @@
         </nav>
     </header>
     
+    <div class="alerta-uso-datos" style="background: #fff3cd; color: #856404; border: 1px solid #ffeeba; border-radius: 8px; padding: 16px; margin: 24px 0; display: flex; align-items: center; gap: 12px; font-size: 1.1em;">
+        <i class="fas fa-exclamation-circle" style="font-size: 1.5em;"></i>
+        <span><strong>IMPORTANTE:</strong> Los datos y cotizaciones mostrados son referenciales, pueden variar y no constituyen una oferta vinculante. Úselos bajo su propio riesgo. Consulte siempre fuentes oficiales antes de tomar decisiones financieras.</span>
+    </div>
+    
     <main>
         <div class="container">
             <section class="cotizaciones" aria-label="Cotizaciones actuales">
                 <article class="cotizacion-card">
-                    <h2>Dólar Binance</h2>
+                    <h2>Tether (USDT)</h2>
                     <div class="precios">
                         <p>Compra: <span id="precioCompraBinance">-</span></p>
                         <p>Venta: <span id="precioVentaBinance">-</span></p>
@@ -58,7 +63,10 @@
                     </div>
                 </article>
             </section>
-            
+            <div class="fuentes-verificadas" style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                <i class="fas fa-shield-alt" style="color: #2cd3a3;"></i>
+                <span>Fuentes verificadas: Binance P2P, OKX, LocalBitcoins, plataformas P2P y casas de cambio locales.</span>
+            </div>
             <section class="grafico-section" aria-label="Gráfico de cotizaciones">
                 <h1 class="main-title">
                     <span class="title-label">Cotización del Dólar</span>
@@ -71,6 +79,14 @@
                     <button class="period-btn" data-period="all">Todo</button>
                 </div>
                 <div id="grafico"></div>
+                <div id="tendencia-patrones" style="margin: 16px 0; display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+                    <span><i class="fas fa-chart-line" style="color:#2cd3a3;"></i> Tendencia: <span id="tendenciaValor">-</span></span>
+                    <span><i class="fas fa-bolt" style="color:#f4b400;"></i> Mayor volatilidad: <span id="volatilidadHora">-</span></span>
+                </div>
+                <div id="analisis-tecnico" style="margin-bottom: 16px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+                    <span><i class="fas fa-arrow-down" style="color:#4CAF50;"></i> Soporte: <span id="soporteValor">-</span></span>
+                    <span><i class="fas fa-arrow-up" style="color:#f44336;"></i> Resistencia: <span id="resistenciaValor">-</span></span>
+                </div>
                 <div id="estado" aria-live="polite"></div>
             </section>
             <section class="calculadora-section" aria-label="Calculadora de divisas">
