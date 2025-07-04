@@ -498,11 +498,30 @@ select {
     transition: all 0.3s ease;
 }
 
+.brecha-subio {
+    background: #e6f4ea;
+    color: #219653;
+    border: 2px solid #27ae60;
+    box-shadow: 0 0 8px #b6f5c6;
+    font-weight: bold;
+}
+.brecha-bajo {
+    background: #fff0f0;
+    color: #c0392b;
+    border: 2px solid #e74c3c;
+    box-shadow: 0 0 8px #ffd6d6;
+    font-weight: bold;
+}
+.brecha-igual {
+    background: #f3f3f3;
+    color: #888;
+    border: 2px solid #bbb;
+    font-weight: bold;
+}
+
 /* Responsive */
 @media (max-width: 480px) {
     .calc-controls {
         flex-direction: column;
     }
 }
-
-@media screen and

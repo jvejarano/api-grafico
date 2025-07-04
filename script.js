@@ -920,11 +920,42 @@ function actualizarDatosEnTiempoReal(nuevaCotizacion) {
     actualizarEstadisticas('$Bs', window.datosValidos);
 }
 
-// Iniciar conexión WebSocket al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    conectarWebSocket();
-    main();
-});
+let brechaAnterior = null;
+function actualizarBrecha() {
+    const ventaUSDT = parseFloat(document.getElementById('precioVentaBinance').textContent.replace(/[^\d.]/g, ''));
+    const ventaOficial = parseFloat(document.getElementById('precioVentaOficial').textContent.replace(/[^\d.]/g, ''));
+    const brechaEl = document.getElementById('brechaValor');
+    const tendenciaEl = document.getElementById('brechaTendencia');
+    if (isNaN(ventaUSDT) || isNaN(ventaOficial)) {
+        brechaEl.textContent = '-';
+        brechaEl.className = '';
+        tendenciaEl.textContent = '';
+        return;
+    }
+    const brecha = ventaUSDT - ventaOficial;
+    const brechaPorc = (brecha / ventaOficial) * 100;
+    let clase = 'brecha-igual';
+    let icono = '';
+    if (brechaPorc > 0.01) {
+        clase = 'brecha-subio';
+        icono = '▲';
+    } else if (brechaPorc < -0.01) {
+        clase = 'brecha-bajo';
+        icono = '▼';
+    }
+    brechaEl.textContent = `${brecha >= 0 ? '+' : ''}${brecha.toFixed(2)} Bs (${brechaPorc >= 0 ? '+' : ''}${brechaPorc.toFixed(2)}%)`;
+    brechaEl.className = clase;
+    tendenciaEl.textContent = icono;
+    brechaAnterior = brecha;
+}
+
+// Actualizar la brecha cada vez que se actualizan los precios
+function hookBrecha() {
+    const obs = new MutationObserver(actualizarBrecha);
+    obs.observe(document.getElementById('precioVentaBinance'), {childList: true});
+    obs.observe(document.getElementById('precioVentaOficial'), {childList: true});
+}
+document.addEventListener('DOMContentLoaded', hookBrecha);
 
 function calcularConversion() {
     const monto = parseFloat(document.getElementById('montoCalculadora').value);
