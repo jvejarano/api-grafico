@@ -21,8 +21,18 @@ async function actualizarDatos(moneda) {
             await graficarDatos(moneda);
             document.getElementById("precioVenta").innerText = `(Venta: ${datos.precioVenta.toFixed(2)} Bs/$US)`;
             actualizarEstadisticas(moneda);
+            // Mostrar icono de API OK
+            const apiStatus = document.getElementById("apiStatus");
+            if (apiStatus) apiStatus.style.display = "inline";
+        } else {
+            // Ocultar icono si no hay datos
+            const apiStatus = document.getElementById("apiStatus");
+            if (apiStatus) apiStatus.style.display = "none";
         }
     } catch (error) {
+        // Ocultar icono si hay error
+        const apiStatus = document.getElementById("apiStatus");
+        if (apiStatus) apiStatus.style.display = "none";
         console.error("Ocurrió un error:", error);
     }
 }
