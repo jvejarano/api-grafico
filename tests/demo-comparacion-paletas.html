@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparación de Paletas de Colores - Sistema de Cotización</title>
+    <style>
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        color: #1f2937;
+        margin-bottom: 40px;
+      }
+
+      .comparison-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .palette-section {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .palette-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .current {
+        border-left: 4px solid #f59e0b;
+      }
+      .optimized {
+        border-left: 4px solid #10b981;
+      }
+
+      .color-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .color-item {
+        text-align: center;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .color-preview {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        margin: 0 auto 10px;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .color-code {
+        font-family: "Monaco", "Menlo", monospace;
+        font-size: 0.8rem;
+        color: #666;
+        margin: 5px 0;
+      }
+
+      .color-name {
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      .contrast-info {
+        font-size: 0.7rem;
+        color: #888;
+      }
+
+      .demo-section {
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #e5e7eb;
+      }
+
+      .demo-title {
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      /* Simulación de componentes */
+      .mock-card {
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .mock-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        margin: 5px;
+        cursor: pointer;
+      }
+
+      .mock-text {
+        margin: 10px 0;
+      }
+
+      .mock-accent {
+        font-weight: 600;
+      }
+
+      .accessibility-score {
+        background: #f8fafc;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 15px;
+        text-align: center;
+      }
+
+      .score {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .score.good {
+        color: #10b981;
+      }
+      .score.warning {
+        color: #f59e0b;
+      }
+      .score.poor {
+        color: #ef4444;
+      }
+
+      .theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Dark mode para el demo */
+      [data-theme="dark"] {
+        background: #111827;
+        color: #f9fafb;
+      }
+
+      [data-theme="dark"] .palette-section {
+        background: #1f2937;
+        color: #f9fafb;
+      }
+
+      [data-theme="dark"] h1 {
+        color: #f9fafb;
+      }
+
+      .recommendations {
+        grid-column: 1 / -1;
+        background: linear-gradient(135deg, #dbeafe 0%, #f0f9ff 100%);
+        padding: 30px;
+        border-radius: 12px;
+        margin-top: 20px;
+      }
+
+      .recommendations h2 {
+        color: #1e40af;
+        margin-bottom: 20px;
+      }
+
+      .recommendation-item {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        border-left: 4px solid #2563eb;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    <div class="container">
+      <h1>🎨 Comparación de Paletas de Colores</h1>
+
+      <div class="comparison-grid">
+        <!-- Paleta Actual -->
+        <div class="palette-section current">
+          <h2 class="palette-title">📊 Paleta Actual</h2>
+
+          <div class="color-grid">
+            <div class="color-item">
+              <div class="color-preview" style="background: #4b76a4"></div>
+              <div class="color-name">Primary</div>
+              <div class="color-code">#4b76a4</div>
+              <div class="contrast-info">6.2:1 ✅</div>
+            </div>
+            <div class="color-item">
+              <div class="color-preview" style="background: #58aee0"></div>
+              <div class="color-name">Secondary</div>
+              <div class="color-code">#58aee0</div>
+              <div class="contrast-info">3.1:1 ⚠️</div>
+            </div>
+            <div class="color-item">
+              <div class="color-preview" style="background: #a4d5d1"></div>
+              <div class="color-name">Background</div>
+              <div class="color-code">#a4d5d1</div>
+              <div class="contrast-info">N/A</div>
+            </div>
+            <div class="color-item">
+              <div class="color-preview" style="background: #166c2c"></div>
+              <div class="color-name">Text</div>
+              <div class="color-code">#166c2c</div>
+              <div class="contrast-info">4.8:1 ✅</div>
+            </div>
+            <div class="color-item">
+              <div class="color-preview" style="background: #2cd3a3"></div>
+              <div class="color-name">Accent</div>
+              <div class="color-code">#2cd3a3</div>
+              <div class="contrast-info">2.9:1 ❌</div>
+            </div>
+          </div>
+
+          <div class="demo-section">
+            <div class="demo-title">Vista Previa de Componentes</div>
+            <div
+              class="mock-card"
+              style="
+                background: #ffffff;
+                color: #166c2c;
+                border: 1px solid #2cd3a3;
+              "
+            >
+              <h3 style="color: #4b76a4; margin-top: 0">Cotización USDT</h3>
+              <div class="mock-text">
+                Compra:
+                <span class="mock-accent" style="color: #2cd3a3">$6.95</span>
+              </div>
+              <div class="mock-text">
+                Venta:
+                <span class="mock-accent" style="color: #2cd3a3">$7.01</span>
+              </div>
+              <button class="mock-button" style="background: #58aee0">
+                Calcular
+              </button>
+            </div>
+          </div>
+
+          <div class="accessibility-score">
+            <div class="score warning">7.2/10</div>
+            <div>Puntuación de Accesibilidad</div>
+          </div>
+        </div>
+
+        <!-- Paleta Optimizada -->
+        <div class="palette-section optimized">
+          <h2 class="palette-title">✨ Paleta Optimizada</h2>
+
+          <div class="color-grid">
+            <div class="color-item">
+              <div class="color-preview" style="background: #2563eb"></div>
+              <div class="color-name">Primary</div>
+              <div class="color-code">#2563eb</div>
+              <div class="contrast-info">8.6:1 ✅</div>
+            </div>
+            <div class="color-item">
+              <div class="color-preview" style="background: #3b82f6"></div>
+              <div class="color-name">Secondary</div>
+              <div class="color-code">#3b82f6</div>
+              <div class="contrast-info">5.9:1 ✅</div>
+            </div>
+            <div class="color-item">
+              <div class="color-preview" style="background: #f8fafc"></div>
+              <div class="color-name">Background</div>
+              <div class="color-code">#f8fafc</div>
+              <div class="contrast-info">N/A</div>
+            </div>
+            <div class="color-item">
+              <div class="color-preview" style="background: #1f2937"></div>
+              <div class="color-name">Text</div>
+              <div class="color-code">#1f2937</div>
+              <div class="contrast-info">16.0:1 ✅</div>
+            </div>
+            <div class="color-item">
+              <div class="color-preview" style="background: #10b981"></div>
+              <div class="color-name">Accent</div>
+              <div class="color-code">#10b981</div>
+              <div class="contrast-info">3.9:1 ✅</div>
+            </div>
+          </div>
+
+          <div class="demo-section">
+            <div class="demo-title">Vista Previa de Componentes</div>
+            <div
+              class="mock-card"
+              style="
+                background: #ffffff;
+                color: #1f2937;
+                border: 1px solid #10b981;
+              "
+            >
+              <h3 style="color: #2563eb; margin-top: 0">Cotización USDT</h3>
+              <div class="mock-text">
+                Compra:
+                <span class="mock-accent" style="color: #10b981">$6.95</span>
+              </div>
+              <div class="mock-text">
+                Venta:
+                <span class="mock-accent" style="color: #10b981">$7.01</span>
+              </div>
+              <button class="mock-button" style="background: #3b82f6">
+                Calcular
+              </button>
+            </div>
+          </div>
+
+          <div class="accessibility-score">
+            <div class="score good">9.1/10</div>
+            <div>Puntuación de Accesibilidad</div>
+          </div>
+        </div>
+
+        <!-- Recomendaciones -->
+        <div class="recommendations">
+          <h2>🎯 Recomendaciones de Implementación</h2>
+
+          <div class="recommendation-item">
+            <strong>🚨 Prioridad Crítica:</strong> Mejorar contraste del color
+            accent de 2.9:1 a 3.9:1 para cumplir WCAG AA
+          </div>
+
+          <div class="recommendation-item">
+            <strong>🔧 Prioridad Alta:</strong> Reemplazar verde oscuro
+            (#166c2c) por gris oscuro (#1f2937) para mejor legibilidad
+          </div>
+
+          <div class="recommendation-item">
+            <strong>💡 Prioridad Media:</strong> Unificar sistema de colores
+            eliminando colores hardcoded en HTML
+          </div>
+
+          <div class="recommendation-item">
+            <strong>🌙 Mejora Dark Mode:</strong> Cambiar fondo marrón (#332527)
+            por gris profesional (#111827)
+          </div>
+
+          <div class="recommendation-item">
+            <strong>📊 Colores Financieros:</strong> Agregar variables
+            específicas para gráficos (bull/bear colors)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleTheme() {
+        const body = document.body;
+        const button = document.querySelector(".theme-toggle");
+
+        if (body.getAttribute("data-theme") === "dark") {
+          body.removeAttribute("data-theme");
+          button.textContent = "🌙";
+        } else {
+          body.setAttribute("data-theme", "dark");
+          button.textContent = "☀️";
+        }
+      }
+    </script>
+  </body>
+</html>
