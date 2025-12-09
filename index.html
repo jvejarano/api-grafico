@@ -1,137 +1,267 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cotizaciones del dólar en Bolivia en tiempo real. Precios referenciales y promedios del mercado. Información únicamente con fines informativos.">
-    <meta name="keywords" content="dólar bolivia, tipo de cambio bolivia, cotización dólar, precio dólar bolivia, dólar binance bolivia, cambio de divisas bolivia">
-    <meta name="author" content="Sistema de Cotizaciones">
-    <meta name="robots" content="index, follow">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cotizaciones del dólar en Bolivia en tiempo real. Precios referenciales y promedios del mercado. Información únicamente con fines informativos."
+    />
+    <meta
+      name="keywords"
+      content="dólar bolivia, tipo de cambio bolivia, cotización dólar, precio dólar bolivia, dólar binance bolivia, cambio de divisas bolivia"
+    />
+    <meta name="author" content="Sistema de Cotizaciones" />
+    <meta name="robots" content="index, follow" />
+
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://api-grafico.example.com">
-    <meta property="og:title" content="Cotización del Dólar en Bolivia | Precios Referenciales">
-    <meta property="og:description" content="Cotizaciones del dólar en Bolivia. Precios referenciales actualizados. Información únicamente con fines informativos.">
-    <meta property="og:image" content="URL_DE_TU_IMAGEN">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://api-grafico.example.com" />
+    <meta
+      property="og:title"
+      content="Cotización del Dólar en Bolivia | Precios Referenciales"
+    />
+    <meta
+      property="og:description"
+      content="Cotizaciones del dólar en Bolivia. Precios referenciales actualizados. Información únicamente con fines informativos."
+    />
+    <meta property="og:image" content="URL_DE_TU_IMAGEN" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cotización del Dólar en Bolivia | Precios Referenciales">
-    <meta name="twitter:description" content="Cotizaciones del dólar en Bolivia. Precios referenciales actualizados. Información únicamente con fines informativos.">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Cotización del Dólar en Bolivia | Precios Referenciales"
+    />
+    <meta
+      name="twitter:description"
+      content="Cotizaciones del dólar en Bolivia. Precios referenciales actualizados. Información únicamente con fines informativos."
+    />
 
     <title>Cotización del Dólar en Bolivia | Precios Referenciales</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <script src="themeToggle.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="disclaimer-banner">
-        <i class="fas fa-exclamation-triangle"></i>
-        AVISO IMPORTANTE: Los datos mostrados son referenciales y no oficiales. Esta información es proporcionada únicamente con fines informativos y no debe ser utilizada como base para transacciones financieras.
+      <i class="fas fa-exclamation-triangle"></i>
+      AVISO IMPORTANTE: Los datos mostrados son referenciales y no oficiales.
+      Esta información es proporcionada únicamente con fines informativos y no
+      debe ser utilizada como base para transacciones financieras.
     </div>
-    
+
     <header>
-        <nav aria-label="Navegación principal">
-            <div class="container">
-            </div>
-        </nav>
+      <nav aria-label="Navegación principal">
+        <div class="container"></div>
+      </nav>
     </header>
-    
-    <div class="alerta-uso-datos" style="background: #fff3cd; color: #856404; border: 1px solid #ffeeba; border-radius: 8px; padding: 16px; margin: 24px 0; display: flex; align-items: center; gap: 12px; font-size: 1.1em;">
-        <i class="fas fa-exclamation-circle" style="font-size: 1.5em;"></i>
-        <span><strong>IMPORTANTE:</strong> Los datos y cotizaciones mostrados son referenciales, pueden variar y no constituyen una oferta vinculante. Úselos bajo su propio riesgo. Consulte siempre fuentes oficiales antes de tomar decisiones financieras.</span>
+
+    <div
+      class="alerta-uso-datos"
+      style="
+        background: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffeeba;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 24px 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1.1em;
+      "
+    >
+      <i class="fas fa-exclamation-circle" style="font-size: 1.5em"></i>
+      <span
+        ><strong>IMPORTANTE:</strong> Los datos y cotizaciones mostrados son
+        referenciales, pueden variar y no constituyen una oferta vinculante.
+        Úselos bajo su propio riesgo. Consulte siempre fuentes oficiales antes
+        de tomar decisiones financieras.</span
+      >
     </div>
-    
+
     <main>
-        <div class="container">
-            <section class="cotizaciones" aria-label="Cotizaciones actuales">
-                <article class="cotizacion-card">
-                    <h2>Tether (USDT)</h2>
-                    <div class="precios">
-                        <p>Compra: <span id="precioCompraBinance">-</span></p>
-                        <p>Venta: <span id="precioVentaBinance">-</span></p>
-                    </div>
-                </article>
-                <article class="cotizacion-card">
-                    <h2>Dólar Oficial</h2>
-                    <div class="precios">
-                        <p>Compra: <span id="precioCompraOficial">-</span></p>
-                        <p>Venta: <span id="precioVentaOficial">-</span></p>
-                    </div>
-                </article>
-            </section>
-            <div id="brecha-section" style="margin-bottom: 18px;">
-                <div id="brecha-info" style="font-size: 1.2em; font-weight: 600; display: flex; align-items: center; gap: 12px;">
-                    <span>Brecha USDT vs Oficial:</span>
-                    <span id="brechaValor" style="padding: 4px 12px; border-radius: 8px; font-weight: bold;">-</span>
-                    <span id="brechaTendencia" style="font-size: 1.3em;"></span>
-                </div>
+      <div class="container">
+        <section class="cotizaciones" aria-label="Cotizaciones actuales">
+          <article class="cotizacion-card">
+            <h2>Tether (USDT)</h2>
+            <div class="precios">
+              <p>Compra: <span id="precioCompraBinance">-</span></p>
+              <p>Venta: <span id="precioVentaBinance">-</span></p>
             </div>
-            <div class="fuentes-verificadas" style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
-                <i class="fas fa-shield-alt" style="color: #2cd3a3;"></i>
-                <span>Fuentes verificadas: Binance P2P, OKX, LocalBitcoins, plataformas P2P y casas de cambio locales.</span>
+          </article>
+          <article class="cotizacion-card">
+            <h2>Dólar Oficial</h2>
+            <div class="precios">
+              <p>Compra: <span id="precioCompraOficial">-</span></p>
+              <p>Venta: <span id="precioVentaOficial">-</span></p>
             </div>
-            <section class="grafico-section" aria-label="Gráfico de cotizaciones">
-                <h1 class="main-title">
-                    <span class="title-label">Cotización del Dólar</span>
-                    <span id="apiStatus" title="Datos actualizados" style="display:none; margin-left:8px; font-size:1.1em; color:#2cd3a3; vertical-align:middle;">&#9679;</span>
-                    <span id="precioVenta" class="current-price"></span>
-                </h1>
-                <div class="period-selector">
-                    <button class="period-btn active" data-period="1d">Último día</button>
-                    <button class="period-btn" data-period="1w">Última semana</button>
-                    <button class="period-btn" data-period="1m">Último mes</button>
-                    <button class="period-btn" data-period="all">Todo</button>
-                </div>
-                <div id="grafico"></div>
-                <div id="tendencia-patrones" style="margin: 16px 0; display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
-                    <span><i class="fas fa-chart-line" style="color:#2cd3a3;"></i> Tendencia: <span id="tendenciaValor">-</span></span>
-                    <span><i class="fas fa-bolt" style="color:#f4b400;"></i> Mayor volatilidad: <span id="volatilidadHora">-</span></span>
-                </div>
-                <div id="analisis-tecnico" style="margin-bottom: 16px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
-                    <span><i class="fas fa-arrow-down" style="color:#4CAF50;"></i> Soporte: <span id="soporteValor">-</span></span>
-                    <span><i class="fas fa-arrow-up" style="color:#f44336;"></i> Resistencia: <span id="resistenciaValor">-</span></span>
-                </div>
-                <div id="estado" aria-live="polite"></div>
-            </section>
-            <section class="calculadora-section" aria-label="Calculadora de divisas">
-                <h2>Calculadora de Conversión</h2>
-                <div class="calculadora">
-                    <div class="calc-input-group">
-                        <input type="number" id="montoCalculadora" min="0" step="0.01" placeholder="Ingrese el monto">
-                        <div class="calc-controls">
-                            <select id="tipoConversion">
-                                <option value="usdToBob">USD → BOB</option>
-                                <option value="bobToUsd">BOB → USD</option>
-                            </select>
-                            <button id="calcular" class="calc-button">
-                                <i class="fas fa-calculator"></i> Calcular
-                            </button>
-                        </div>
-                    </div>
-                    <div class="calc-resultado">
-                        <span id="resultadoConversion">0.00</span>
-                    </div>
-                </div>
-            </section>
+          </article>
+        </section>
+        <div id="brecha-section" style="margin-bottom: 18px">
+          <div
+            id="brecha-info"
+            style="
+              font-size: 1.2em;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              gap: 12px;
+            "
+          >
+            <span>Brecha USDT vs Oficial:</span>
+            <span
+              id="brechaValor"
+              style="padding: 4px 12px; border-radius: 8px; font-weight: bold"
+              >-</span
+            >
+            <span id="brechaTendencia" style="font-size: 1.3em"></span>
+          </div>
         </div>
+        <div
+          class="fuentes-verificadas"
+          style="
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+          "
+        >
+          <i class="fas fa-shield-alt" style="color: #2cd3a3"></i>
+          <span
+            >Fuentes verificadas: Binance P2P, OKX, LocalBitcoins, plataformas
+            P2P y casas de cambio locales.</span
+          >
+        </div>
+        <section class="grafico-section" aria-label="Gráfico de cotizaciones">
+          <h1 class="main-title">
+            <span class="title-label">Cotización del Dólar</span>
+            <span
+              id="apiStatus"
+              title="Datos actualizados"
+              style="
+                display: none;
+                margin-left: 8px;
+                font-size: 1.1em;
+                color: #2cd3a3;
+                vertical-align: middle;
+              "
+              >&#9679;</span
+            >
+            <span id="precioVenta" class="current-price"></span>
+          </h1>
+          <div class="period-selector">
+            <button class="period-btn active" data-period="1d">
+              Último día
+            </button>
+            <button class="period-btn" data-period="1w">Última semana</button>
+            <button class="period-btn" data-period="1m">Último mes</button>
+            <button class="period-btn" data-period="all">Todo</button>
+          </div>
+          <div id="grafico"></div>
+          <div
+            id="tendencia-patrones"
+            style="
+              margin: 16px 0;
+              display: flex;
+              gap: 24px;
+              align-items: center;
+              flex-wrap: wrap;
+            "
+          >
+            <span
+              ><i class="fas fa-chart-line" style="color: #2cd3a3"></i>
+              Tendencia: <span id="tendenciaValor">-</span></span
+            >
+            <span
+              ><i class="fas fa-bolt" style="color: #f4b400"></i> Mayor
+              volatilidad: <span id="volatilidadHora">-</span></span
+            >
+          </div>
+          <div
+            id="analisis-tecnico"
+            style="
+              margin-bottom: 16px;
+              display: flex;
+              gap: 24px;
+              align-items: center;
+              flex-wrap: wrap;
+            "
+          >
+            <span
+              ><i class="fas fa-arrow-down" style="color: #4caf50"></i> Soporte:
+              <span id="soporteValor">-</span></span
+            >
+            <span
+              ><i class="fas fa-arrow-up" style="color: #f44336"></i>
+              Resistencia: <span id="resistenciaValor">-</span></span
+            >
+          </div>
+          <div id="estado" aria-live="polite"></div>
+        </section>
+        <section
+          class="calculadora-section"
+          aria-label="Calculadora de divisas"
+        >
+          <h2>Calculadora de Conversión</h2>
+          <div class="calculadora">
+            <div class="calc-input-group">
+              <input
+                type="number"
+                id="montoCalculadora"
+                min="0"
+                step="0.01"
+                placeholder="Ingrese el monto"
+              />
+              <div class="calc-controls">
+                <select id="tipoConversion">
+                  <option value="usdToBob">USD → BOB</option>
+                  <option value="bobToUsd">BOB → USD</option>
+                </select>
+                <button id="calcular" class="calc-button">
+                  <i class="fas fa-calculator"></i> Calcular
+                </button>
+              </div>
+            </div>
+            <div class="calc-resultado">
+              <span id="resultadoConversion">0.00</span>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
-            <i class="fas fa-sun" aria-hidden="true"></i>
-            <i class="fas fa-moon" aria-hidden="true"></i>
-        </button>
+      <button
+        class="theme-toggle"
+        onclick="toggleTheme()"
+        aria-label="Cambiar tema"
+      >
+        <i class="fas fa-sun" aria-hidden="true"></i>
+        <i class="fas fa-moon" aria-hidden="true"></i>
+      </button>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-crosshair"></script>
     <script src="src/services/data-merger.js"></script>
     <script src="src/visualization/chart-handler.js"></script>
     <script src="script.js"></script>
-</body>
+
+    <!-- Verificador de Accesibilidad (Frontend Puro - Sin Node.js) -->
+    <script src="accessibility-checker.js"></script>
+  </body>
 </html>
