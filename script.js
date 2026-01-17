@@ -111,27 +111,7 @@ async function obtenerDatosDolarapi(moneda) {
   }
 }
 
-function guardarDatos(fechaHora, moneda, precioCompra, precioVenta) {
-  const clave = `precios_${moneda}`;
-  let datos = JSON.parse(localStorage.getItem(clave)) || [];
 
-  // Limitar la cantidad de datos almacenados (último mes)
-  const unMesAtras = new Date();
-  unMesAtras.setMonth(unMesAtras.getMonth() - 1);
-
-  // Filtrar datos usando Date válidas
-  datos = datos.filter((item) => {
-    try {
-      const fecha = new Date(item.fechaHora);
-      return !isNaN(fecha.getTime()) && fecha >= unMesAtras;
-    } catch (e) {
-      return false; // Descartar fechas inválidas
-    }
-  });
-
-  datos.push({ fechaHora, precioCompra, precioVenta });
-  localStorage.setItem(clave, JSON.stringify(datos));
-}
 
 function crearGrafico(canvas, datos, etiquetas, preciosVenta, etiqueta) {
   // Calcular valores estadísticos
@@ -1001,47 +981,7 @@ function mostrarMensajeGrafico(mensaje) {
   ctx.fillText(mensaje, canvas.width / 2, canvas.height / 2);
 }
 
-function guardarDatos(
-  fechaHora,
-  moneda,
-  precioCompra,
-  precioVenta,
-  esManual = false
-) {
-  const clave = `precios_${moneda}`;
-  let datos = JSON.parse(localStorage.getItem(clave)) || [];
 
-  // Filtrar datos antiguos (último mes)
-  const unMesAtras = new Date();
-  unMesAtras.setMonth(unMesAtras.getMonth() - 1);
-
-  // Filtrar datos usando Date válidas y eliminar duplicados
-  datos = datos.filter((item) => {
-    try {
-      const fecha = new Date(item.fechaHora);
-      return !isNaN(fecha.getTime()) && fecha >= unMesAtras;
-    } catch (e) {
-      return false;
-    }
-  });
-
-  // Verificar si el último precio es diferente antes de agregar
-  const ultimoDato = datos[datos.length - 1];
-  if (
-    !ultimoDato ||
-    Math.abs(ultimoDato.precioVenta - precioVenta) >= 0.01 ||
-    Math.abs(ultimoDato.precioCompra - precioCompra) >= 0.01 ||
-    esManual
-  ) {
-    datos.push({
-      fechaHora,
-      precioCompra,
-      precioVenta,
-      actualizacionManual: esManual,
-    });
-    localStorage.setItem(clave, JSON.stringify(datos));
-  }
-}
 
 // Configuración de WebSocket
 let ws;
